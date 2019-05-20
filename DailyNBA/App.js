@@ -1,49 +1,86 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import { Text, View, Button } from 'react-native';
+import { createBottomTabNavigator, createAppContainer, createStackNavigator, } from 'react-navigation';
+import { Icon } from 'react-native-elements'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
-export default class App extends Component<Props> {
+class MatchDetailsScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Details!</Text>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+class GamesScreen extends Component {
+  static navigationOptions = {
+    title: `${Date().slice(0,15)}`,
+  };
+
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Games</Text>
+        <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
+      </View>
+    );
+  }
+}
+
+class MeScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Me</Text>
+      </View>
+    );
+  }
+}
+
+const HomeStack = createStackNavigator({
+  Home: GamesScreen,
+  Details: MatchDetailsScreen,
 });
+
+const TabNavigator = createBottomTabNavigator(
+  {
+    Games: HomeStack,
+    Me: MeScreen,
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName, iconType;
+        if (routeName === 'Games') {
+          iconName = `ios-basketball`;
+          iconType = `ionicon`
+          // Sometimes we want to add badges to some icons. 
+          // You can check the implementation below.
+          //IconComponent = <ion-icon name="basketball"></ion-icon>; 
+        } else if (routeName === 'Me') {
+          iconName = `person`;
+          iconType = `material`
+        }
+
+        // You can return any component that you like here!
+        return <Icon 
+          name={iconName}
+          type={iconType}
+          size={25} 
+          color={tintColor} 
+        />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'red',
+      inactiveTintColor: 'gray',
+    },
+  }
+);
+
+export default createAppContainer(TabNavigator);
