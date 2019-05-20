@@ -1,5 +1,5 @@
 import react, {Component} from 'react'
-import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity} from 'react-native'
+import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, FlatList} from 'react-native'
 import address from '../assets/address'
 
 //get height and width of the window
@@ -27,18 +27,25 @@ export class Games extends Component {
             .catch(error => alert(error))
     }
 
-    render() 
+    _renderItem() 
     {
         return (
             <View style={styles.container}>
                 <TouchableOpacity>
                     <View style={styles.box}>
-
+                        <View style={styles.team}>
+                            
+                        </View>
                     </View>
                 </TouchableOpacity>
             </View>
             
         )
+    }
+
+    render()
+    {
+        return()
     }
 }
 
@@ -58,6 +65,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     teamImage: {
-        
+
     }
   });
