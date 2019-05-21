@@ -41,6 +41,16 @@ class MeScreen extends Component {
   }
 }
 
+class RankingsScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Rankings</Text>
+      </View>
+    );
+  }
+}
+
 const HomeStack = createStackNavigator({
   Home: GamesScreen,
   Details: MatchDetailsScreen,
@@ -49,6 +59,7 @@ const HomeStack = createStackNavigator({
 const TabNavigator = createBottomTabNavigator(
   {
     Games: HomeStack,
+    Rankings: RankingsScreen,
     Me: MeScreen,
   },
   {
@@ -62,9 +73,12 @@ const TabNavigator = createBottomTabNavigator(
           // Sometimes we want to add badges to some icons. 
           // You can check the implementation below.
           //IconComponent = <ion-icon name="basketball"></ion-icon>; 
+        } else if (routeName === 'Rankings') {
+          iconName = `bars`;
+          iconType = `antdesign`
         } else if (routeName === 'Me') {
-          iconName = `person`;
-          iconType = `material`
+          iconName = 'person',
+          iconType = 'material'
         }
 
         // You can return any component that you like here!

@@ -27,14 +27,22 @@ export class Games extends Component {
             .catch(error => alert(error))
     }
 
-    _renderItem() 
+    _renderItem({item}, index) 
     {
         return (
             <View style={styles.container}>
                 <TouchableOpacity>
                     <View style={styles.box}>
                         <View style={styles.team}>
-                            
+                            <Image />
+                            <Text>AWAY</Text>    
+                        </View>
+                        <Text>{this.state.games[index].visitor.score}</Text>
+                        <Text>V.S.</Text>
+                        <Text>{this.state.games[index].home.score}</Text>
+                        <View style={styles.team}>
+                            <Image />
+                            <Text>HOME</Text>    
                         </View>
                     </View>
                 </TouchableOpacity>
