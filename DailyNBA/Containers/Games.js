@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, FlatList} from 'react-native'
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import address from './assets/address'
-import teams from './assets/team_map'
+import {GamesLayout} from '../Codes/gameslayout'
 
 //get height and width of the window
 const Height = Dimensions.get('screen').height;
@@ -21,17 +21,16 @@ class Games extends Component {
 
   //get the data from the internet
   componentDidMount() {
-      fetch(`http://data.nba.com/data/5s/json/cms/noseason/scoreboard/20181225/games.json`)
-          .then( response => response.json() )
-          .then(data => {
-              this.setState({games: data.sports_content.games.game});
-          })
-          .then(console.log(this.state.address))
-          .catch(error => alert(error))
+    fetch(`http://data.nba.com/data/5s/json/cms/noseason/scoreboard/20181225/games.json`)
+      .then( response => response.json() )
+      .then(data => {
+        this.setState({games: data.sports_content.games.game});
+      })
+      .catch(error => alert(error))
   }
 
   _renderItem = ({item}) =>  {
-    return (
+    return(
       <View style={styles.container}>
         <TouchableOpacity
           onPress={() => this.props.navigation.navigate('Details', {
@@ -40,27 +39,14 @@ class Games extends Component {
             home: item.home.team_key
           })}
         >
-          <View style={styles.box}>
-            <View style={styles.team}>
-              <Image
-                style={styles.teamImage}
-                source={teams[item.visitor.team_key].logo} 
-              />
-              <Text>AWAY</Text>    
-            </View>
-            <View style={styles.score}><Text>{item.visitor.team_key}</Text></View>
-            <View style={styles.score}><Text>{item.visitor.score} - {item.home.score}</Text></View>
-            <View style={styles.score}><Text>{item.home.team_key}</Text></View>
-            <View style={styles.team}>
-              <Image
-                style={styles.teamImage}
-                source={teams[item.home.team_key].logo}
-              />
-              <Text>HOME</Text>    
-            </View>
-          </View>
+          <GamesLayout
+            visitor={item.visitor.team_key}
+            visitorscore={item.visitor.score}
+            home={item.home.team_key}
+            homescore={item.home.score}
+          />
         </TouchableOpacity>
-      </View>   
+      </View>
     )
   }
 
@@ -78,6 +64,25 @@ class Games extends Component {
 }
 
 class GameDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: this.props.navigation.getParam('id', '0'),
+      details: [
+        
+      ]
+    }
+  }
+
+  static navigationOptions = ({ navigation }) => {
+    let visitor = navigation.getParam('visitor','nothing');
+    let home = navigation.getParam('home', 'nothing');
+    let title = visitor + ' - ' + home;
+    return {
+      title: title,
+    };
+  };
+
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
