@@ -3,7 +3,7 @@ import { Text, View, Button } from 'react-native';
 import { createBottomTabNavigator, createAppContainer, createStackNavigator, } from 'react-navigation';
 import { Icon } from 'react-native-elements'
 
-class MatchDetailsScreen extends Component {
+class GameDetailsScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -53,7 +53,7 @@ class RankingsScreen extends Component {
 
 const HomeStack = createStackNavigator({
   Home: GamesScreen,
-  Details: MatchDetailsScreen,
+  Details: GameDetailsScreen,
 });
 
 const TabNavigator = createBottomTabNavigator(
