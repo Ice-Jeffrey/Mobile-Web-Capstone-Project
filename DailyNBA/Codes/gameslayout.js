@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, FlatList} from 'react-native'
-import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
-
 import teams from '../assets/team-map'
 
 //get height and width of the window
