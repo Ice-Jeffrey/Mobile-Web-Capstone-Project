@@ -68,9 +68,7 @@ class GameDetails extends Component {
     super(props);
     this.state = {
       id: this.props.navigation.getParam('id', '0'),
-      details: [
-        
-      ]
+      details: this.props.navigation.getParam('details', 'null'),
     }
   }
 
@@ -84,10 +82,53 @@ class GameDetails extends Component {
   };
 
   render() {
+    console.log(this.state.details)
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <GamesLayout
+            visitor={this.state.details.visitor.team_key}
+            visitorscore={this.state.details.visitor.score}
+            home={this.state.details.home.team_key}
+            homescore={this.state.details.home.score}
+          />
+        
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start'}}>
+            <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
+              <View style={[styles.scorecell, {width: 40}]}><Text>teams</Text></View>
+              {this.state.details.visitor.linescores.period.map( (item) => {
+                return(
+                <View style={{flex: 1}}>
+                  <View style={[styles.scorecell]}><Text>{item.period_name}</Text></View>
+                </View>
+              )})}
+              <View style={[styles.scorecell, {width: 40}]}><Text>Total</Text></View>
+            </View>
+
+            <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
+              <View style={[styles.scorecell, {width: 40}]}><Text>{this.state.details.visitor.team_key}</Text></View>
+              {this.state.details.visitor.linescores.period.map( (item) => {
+                return(
+                <View style={{flex: 1}}>
+                  <View style={[styles.scorecell]}><Text>{item.score}</Text></View>
+                </View>
+              )})}
+              <View style={[styles.scorecell, {width: 40}]}><Text>{this.state.details.visitor.score}</Text></View>
+            </View>
+
+            <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
+              <View style={[styles.scorecell, {width: 40}]}><Text>{this.state.details.home.team_key}</Text></View>
+              {this.state.details.home.linescores.period.map( (item) => {
+                return(
+                <View style={{flex: 1}}>
+                  <View style={[styles.scorecell]}><Text>{item.score}</Text></View>
+                </View>
+              )})}
+              <View style={[styles.scorecell, {width: 40}]}><Text>{this.state.details.home.score}</Text></View>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
     );
   }  
 }
@@ -124,6 +165,13 @@ const styles = StyleSheet.create({
   },
   score: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  scorecell: {
+    height: Height/18,
+    borderWidth: 1,
+    borderColor: 'black',
     alignItems: 'center',
     justifyContent: 'center'
   }
