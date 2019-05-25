@@ -3,6 +3,10 @@ import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, FlatList} f
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import address from '../assets/address'
 import {GamesLayout} from '../Codes/gameslayout'
+import {Scoresheet} from '../Codes/scoresheet'
+import {Leaders} from '../Codes/leaders'
+import {Teamstats} from '../Codes/teamstats'
+
 
 //get height and width of the window
 const Height = Dimensions.get('screen').height;
@@ -25,6 +29,7 @@ class Games extends Component {
       .then( response => response.json() )
       .then(data => {
         this.setState({games: data.sports_content.games.game});
+        //console.log(this.state.games)
       })
       .catch(error => alert(error))
   }
@@ -34,9 +39,11 @@ class Games extends Component {
       <View style={styles.container}>
         <TouchableOpacity
           onPress={() => this.props.navigation.navigate('Details', {
+            date: item.date,
             id: item.id,
             visitor: item.visitor.team_key,
-            home: item.home.team_key
+            home: item.home.team_key,
+            general: item
           })}
         >
           <GamesLayout
@@ -67,8 +74,9 @@ class GameDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      date: this.props.navigation.getParam('date', '00000000'),
       id: this.props.navigation.getParam('id', '0'),
-      details: this.props.navigation.getParam('details', 'null'),
+      general: this.props.navigation.getParam('general', 'null'),
     }
   }
 
@@ -82,52 +90,11 @@ class GameDetails extends Component {
   };
 
   render() {
-    console.log(this.state.details)
     return (
       <ScrollView>
-        <View style={styles.container}>
-          <GamesLayout
-            visitor={this.state.details.visitor.team_key}
-            visitorscore={this.state.details.visitor.score}
-            home={this.state.details.home.team_key}
-            homescore={this.state.details.home.score}
-          />
-        
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start'}}>
-            <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
-              <View style={[styles.scorecell, {width: 40}]}><Text>teams</Text></View>
-              {this.state.details.visitor.linescores.period.map( (item) => {
-                return(
-                <View style={{flex: 1}}>
-                  <View style={[styles.scorecell]}><Text>{item.period_name}</Text></View>
-                </View>
-              )})}
-              <View style={[styles.scorecell, {width: 40}]}><Text>Total</Text></View>
-            </View>
-
-            <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
-              <View style={[styles.scorecell, {width: 40}]}><Text>{this.state.details.visitor.team_key}</Text></View>
-              {this.state.details.visitor.linescores.period.map( (item) => {
-                return(
-                <View style={{flex: 1}}>
-                  <View style={[styles.scorecell]}><Text>{item.score}</Text></View>
-                </View>
-              )})}
-              <View style={[styles.scorecell, {width: 40}]}><Text>{this.state.details.visitor.score}</Text></View>
-            </View>
-
-            <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
-              <View style={[styles.scorecell, {width: 40}]}><Text>{this.state.details.home.team_key}</Text></View>
-              {this.state.details.home.linescores.period.map( (item) => {
-                return(
-                <View style={{flex: 1}}>
-                  <View style={[styles.scorecell]}><Text>{item.score}</Text></View>
-                </View>
-              )})}
-              <View style={[styles.scorecell, {width: 40}]}><Text>{this.state.details.home.score}</Text></View>
-            </View>
-          </View>
-        </View>
+        <View><Scoresheet general={this.state.general}/></View>
+        <View><Leaders id={this.state.id} date={this.state.date}/></View>
+        {<View><Teamstats id={this.state.id} date={this.state.date}/></View>}
       </ScrollView>
     );
   }  
