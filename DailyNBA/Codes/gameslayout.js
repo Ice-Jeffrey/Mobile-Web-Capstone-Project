@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, FlatList} from 'react-native'
-import teams from '../assets/team-map'
+import {View, Text, Image, StyleSheet, Dimensions} from 'react-native'
+
+import teams from '../assets/team_map'
 
 //get height and width of the window
 const Height = Dimensions.get('screen').height;
@@ -31,6 +32,7 @@ export class GamesLayout extends Component {
                 />
                 <Text>HOME</Text>    
             </View>
+            <View style={{width: 30, alignItems: 'center', justifyContent: 'center'}}><Text>{this.props.status}</Text></View>
         </View>   
     )
   }
@@ -53,7 +55,8 @@ const styles = StyleSheet.create({
   },
   teamImage: {
     height: Height/8 - 30,
-    width: 40
+    width: 60,
+    borderRadius: 30
   },
   score: {
     flex: 1,

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, FlatList, ScrollView} from 'react-native'
+import {View, Text, StyleSheet, Dimensions} from 'react-native'
 
 //get height and width of the window
 const Height = Dimensions.get('screen').height;
@@ -25,8 +25,8 @@ export class Leaders extends Component {
             .then( response => response.json() )
             .then( data => (
                 this.setState({
-                    visitor: data.sports_content.game.visitor,
-                    home: data.sports_content.game.home
+                    visitor: data.sports_content.game.visitor.Leaders,
+                    home: data.sports_content.game.home.Leaders
                 }),
                 console.log(this.state.visitor),
                 console.log(this.state.home)  
@@ -36,58 +36,35 @@ export class Leaders extends Component {
 
     render() {
         return(
-            <View style={styles.container}>
+            <View>
                 <Text style={{fontSize: 25}}>{'\n'}Leaders</Text>
-                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
-                    <View style={{alignItems: 'center', width: Width/3}}><Text style={{fontSize: 20}}>AWAY</Text></View>
-                    <View style={{alignItems: 'center', width: Width/3}} />
-                    <View style={{alignItems: 'center', width: Width/3}}><Text style={{fontSize: 20}}>HOME</Text></View>
-                </View>
-                <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-                        <View style={{flex: 1, flexDirection: 'row', width: Width/3-30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{fontSize: 15}}>{this.state.visitor.Leaders && this.state.visitor.Leaders.Points && this.state.visitor.Leaders.Points.leader[0].LastName}</Text> 
-                        </View>   
-                        <View style={{width: 30, alignItems: 'center', justifyContent: 'center'}}><Text style={{fontSize: 15}}>{this.state.visitor.Leaders && this.state.visitor.Leaders.Points.StatValue}</Text></View>
-                        
-                        <View style={{width: Width/3, justifyContent: 'center', alignItems: 'center'}}><Text style={{fontSize: 20}}>Points</Text></View>
-
-                        <View style={{width: 30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{fontSize: 15}}>{this.state.visitor.Leaders && this.state.home.Leaders.Points.StatValue}</Text>
-                        </View>
-                        <View style={{flex: 1, flexDirection: 'row', width: Width/3-30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{fontSize: 15}}>{this.state.home.Leaders && this.state.home.Leaders.Points && this.state.home.Leaders.Points.leader[0].LastName}</Text>
-                        </View>
+                <View style={styles.container}>
+                    
+                    <View style={styles.row}>
+                        <View style={styles.titleCell}><Text style={{fontSize: 20}}>AWAY</Text></View>
+                        <View style={styles.titleCell} />
+                        <View style={styles.titleCell}><Text style={{fontSize: 20}}>HOME</Text></View>
                     </View>
-                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-                        <View style={{flex: 1, flexDirection: 'row', width: Width/3-30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{fontSize: 15}}>{this.state.visitor.Leaders && this.state.visitor.Leaders.Assists && this.state.visitor.Leaders.Assists.leader[0].LastName}</Text> 
-                        </View>   
-                        <View style={{width: 30, alignItems: 'center', justifyContent: 'center'}}><Text style={{fontSize: 15}}>{this.state.visitor.Leaders && this.state.visitor.Leaders.Assists.StatValue}</Text></View>
-                        
-                        <View style={{width: Width/3, justifyContent: 'center', alignItems: 'center'}}><Text style={{fontSize: 20}}>Assists</Text></View>
-
-                        <View style={{width: 30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{fontSize: 15}}>{this.state.visitor.Leaders && this.state.home.Leaders.Assists.StatValue}</Text>
-                        </View>
-                        <View style={{flex: 1, flexDirection: 'row', width: Width/3-30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{fontSize: 15}}>{this.state.home.Leaders && this.state.home.Leaders.Assists && this.state.home.Leaders.Assists.leader[0].LastName}</Text>
-                        </View>
+                    <View style={styles.row}>
+                        <View style={styles.nameCell}><Text>{this.state.visitor.Points && this.state.visitor.Points.leader[0].LastName}</Text></View>
+                        <View style={styles.statsCell}><Text>{this.state.visitor.Points && this.state.visitor.Points.StatValue}</Text></View>
+                        <View style={styles.titleCell}><Text style={{fontSize: 20}}>Points</Text></View>
+                        <View style={styles.statsCell}><Text>{this.state.home.Points && this.state.home.Points.StatValue}</Text></View>
+                        <View style={styles.nameCell}><Text>{this.state.home.Points && this.state.home.Points.leader[0].LastName}</Text></View>
                     </View>
-                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-                        <View style={{flex: 1, flexDirection: 'row', width: Width/3-30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{fontSize: 15}}>{this.state.visitor.Leaders && this.state.visitor.Leaders.Rebounds && this.state.visitor.Leaders.Rebounds.leader[0].LastName}</Text> 
-                        </View>   
-                        <View style={{width: 30, alignItems: 'center', justifyContent: 'center'}}><Text style={{fontSize: 15}}>{this.state.visitor.Leaders && this.state.visitor.Leaders.Rebounds.StatValue}</Text></View>
-                        
-                        <View style={{width: Width/3, justifyContent: 'center', alignItems: 'center'}}><Text style={{fontSize: 20}}>Rebounds</Text></View>
-
-                        <View style={{width: 30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{fontSize: 15}}>{this.state.visitor.Leaders && this.state.home.Leaders.Rebounds.StatValue}</Text>
-                        </View>
-                        <View style={{flex: 1, flexDirection: 'row', width: Width/3-30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{fontSize: 15}}>{this.state.home.Leaders && this.state.home.Leaders.Rebounds && this.state.home.Leaders.Rebounds.leader[0].LastName}</Text>
-                        </View>
+                    <View style={styles.row}>
+                        <View style={styles.nameCell}><Text>{this.state.visitor.Assists && this.state.visitor.Assists.leader[0].LastName}</Text></View>
+                        <View style={styles.statsCell}><Text>{this.state.visitor.Assists && this.state.visitor.Assists.StatValue}</Text></View>
+                        <View style={styles.titleCell}><Text style={{fontSize: 20}}>Assists</Text></View>
+                        <View style={styles.statsCell}><Text>{this.state.home.Assists && this.state.home.Assists.StatValue}</Text></View>
+                        <View style={styles.nameCell}><Text>{this.state.home.Assists && this.state.home.Assists.leader[0].LastName}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.nameCell}><Text>{this.state.visitor.Rebounds && this.state.visitor.Rebounds.leader[0].LastName}</Text></View>
+                        <View style={styles.statsCell}><Text>{this.state.visitor.Rebounds && this.state.visitor.Rebounds.StatValue}</Text></View>
+                        <View style={styles.titleCell}><Text style={{fontSize: 20}}>Rebounds</Text></View>
+                        <View style={styles.statsCell}><Text>{this.state.home.Rebounds && this.state.home.Rebounds.StatValue}</Text></View>
+                        <View style={styles.nameCell}><Text>{this.state.home.Rebounds && this.state.home.Rebounds.leader[0].LastName}</Text></View>
                     </View>
                 </View>
             </View>
@@ -95,7 +72,7 @@ export class Leaders extends Component {
     }
 }
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#F5FCFF',
@@ -108,9 +85,19 @@ styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between'
     },
-    cell: {
+    titleCell: {
         width: Width/3,
         justifyContent: 'center',
         alignItems: 'center'
     },
+    statsCell: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 30
+    },
+    nameCell: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: Width/3 - 30
+    }
 })

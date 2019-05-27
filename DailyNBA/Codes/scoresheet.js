@@ -23,6 +23,7 @@ export class Scoresheet extends Component {
                     visitorscore={this.state.general.visitor.score}
                     home={this.state.general.home.team_key}
                     homescore={this.state.general.home.score}
+                    status={this.props.status}
                 />
                 
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start'}}>

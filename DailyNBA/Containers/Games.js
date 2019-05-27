@@ -6,6 +6,7 @@ import {GamesLayout} from '../Codes/gameslayout'
 import {Scoresheet} from '../Codes/scoresheet'
 import {Leaders} from '../Codes/leaders'
 import {Teamstats} from '../Codes/teamstats'
+import {Playerstats} from '../Codes/playerstats'
 
 
 //get height and width of the window
@@ -43,7 +44,8 @@ class Games extends Component {
             id: item.id,
             visitor: item.visitor.team_key,
             home: item.home.team_key,
-            general: item
+            general: item,
+            status: item.period_time.period_status,
           })}
         >
           <GamesLayout
@@ -51,6 +53,7 @@ class Games extends Component {
             visitorscore={item.visitor.score}
             home={item.home.team_key}
             homescore={item.home.score}
+            status={item.period_time.period_status}
           />
         </TouchableOpacity>
       </View>
@@ -77,6 +80,7 @@ class GameDetails extends Component {
       date: this.props.navigation.getParam('date', '00000000'),
       id: this.props.navigation.getParam('id', '0'),
       general: this.props.navigation.getParam('general', 'null'),
+      status: this.props.navigation.getParam('status','final')
     }
   }
 
@@ -92,9 +96,10 @@ class GameDetails extends Component {
   render() {
     return (
       <ScrollView>
-        <View><Scoresheet general={this.state.general}/></View>
+        <View><Scoresheet general={this.state.general} status={this.state.status}/></View>
         <View><Leaders id={this.state.id} date={this.state.date}/></View>
-        {<View><Teamstats id={this.state.id} date={this.state.date}/></View>}
+        <View><Teamstats id={this.state.id} date={this.state.date}/></View>
+        <View><Playerstats id={this.state.id} date={this.state.date}/></View>
       </ScrollView>
     );
   }  
@@ -115,32 +120,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
-  },
-  box: {
-    flex: 1,
-    flexDirection: 'row',
-    height: Height/8,
-  },
-  team: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  teamImage: {
-    height: Height/8 - 30,
-    width: 40
-  },
-  score: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  scorecell: {
-    height: Height/18,
-    borderWidth: 1,
-    borderColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center'
   }
 });
 

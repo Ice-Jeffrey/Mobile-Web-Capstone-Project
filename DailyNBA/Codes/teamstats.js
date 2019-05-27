@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, FlatList, ScrollView} from 'react-native'
+import {View, Text, StyleSheet, Dimensions} from 'react-native'
 
 //get height and width of the window
 const Height = Dimensions.get('screen').height;
@@ -50,6 +50,16 @@ export class Teamstats extends Component {
                     <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.points}</Text></View>
                 </View>
                 <View style={styles.row}>
+                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.three_pointers_made}/{this.state.visitor.three_pointers_attempted}</Text></View>
+                    <View style={styles.type}><Text style={{fontSize: 20}}>Three Pointers</Text></View>
+                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.three_pointers_made}/{this.state.home.three_pointers_attempted}</Text></View>
+                </View>
+                <View style={styles.row}>
+                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.free_throws_made}/{this.state.visitor.free_throws_attempted}</Text></View>
+                    <View style={styles.type}><Text style={{fontSize: 20}}>Free Throws</Text></View>
+                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.free_throws_made}/{this.state.home.free_throws_attempted}</Text></View>
+                </View>
+                <View style={styles.row}>
                     <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.rebounds_offensive}</Text></View>
                     <View style={styles.type}><Text style={{fontSize: 20}}>Off-Rebounds</Text></View>
                     <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.rebounds_offensive}</Text></View>
@@ -84,7 +94,7 @@ export class Teamstats extends Component {
     }
 }
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#F5FCFF',
