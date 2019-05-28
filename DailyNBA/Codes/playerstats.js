@@ -35,32 +35,26 @@ export class Playerstats extends Component {
             .catch(error => alert(error))
     }
 
-    _renderItem = ({item}) => {
-        item.key = item.player_code;
-        return (
-            <View style={styles.row}>
-                <View style={styles.cell}><Text>{item.last_name}</Text></View>
-                <View style={styles.cell}><Text>{item.minutes}</Text></View>
-                <View style={styles.cell}><Text>{item.points}</Text></View>
-                <View style={styles.cell}><Text>{item.field_goals_made}/{item.field_goals_attempted}</Text></View>
-                <View style={styles.cell}><Text>{item.three_pointers_made}/{item.three_pointers_attempted}</Text></View>
-                <View style={styles.cell}><Text>{item.free_throws_made}/{item.free_throws_attempted}</Text></View>
-                <View style={styles.cell}><Text>{item.rebounds_offensive}</Text></View>
-                <View style={styles.cell}><Text>{item.rebounds_defensive}</Text></View>
-                <View style={styles.cell}><Text>{item.assits}</Text></View>
-                <View style={styles.cell}><Text>{item.steals}</Text></View>
-                <View style={styles.cell}><Text>{item.blocks}</Text></View>
-                <View style={styles.cell}><Text>{item.fouls}</Text></View>
-                <View style={styles.cell}><Text>{item.turnovers}</Text></View>
-                <View style={styles.cell}><Text>{item.plus_minus}</Text></View>
-            </View>
-        )
-    }
-
     render() {
         return(
             <View>
                 <Text style={styles.title}>{'\n'}Visitor Playerstats</Text>
+                <View style={styles.row}>
+                    <View style={styles.name}><Text>Name</Text></View>
+                    <View style={styles.cell2}><Text>Min</Text></View>
+                    <View style={styles.cell2}><Text>Pts</Text></View>
+                    <View style={styles.cell1}><Text>FGs</Text></View>
+                    <View style={styles.cell1}><Text>3PTs</Text></View>
+                    <View style={styles.cell1}><Text>FTs</Text></View>
+                    <View style={styles.cell2}><Text>OReb</Text></View>
+                    <View style={styles.cell2}><Text>DReb</Text></View>
+                    <View style={styles.cell2}><Text>Ast</Text></View>
+                    <View style={styles.cell2}><Text>Stl</Text></View>
+                    <View style={styles.cell2}><Text>Blk</Text></View>
+                    <View style={styles.cell2}><Text>Fou</Text></View>
+                    <View style={styles.cell2}><Text>Tur</Text></View>
+                    <View style={styles.plus_minus}><Text>+/-</Text></View>
+                </View>
                 {
                     this.state.visitor.map((item) => {
                         //item.key = item.player_code;
@@ -84,7 +78,24 @@ export class Playerstats extends Component {
                         )
                     })
                 }            
+
                 <Text style={styles.title}>{'\n'}Home Playerstats</Text>
+                <View style={styles.row}>
+                    <View style={styles.name}><Text>Name</Text></View>
+                    <View style={styles.cell2}><Text>Min</Text></View>
+                    <View style={styles.cell2}><Text>Pts</Text></View>
+                    <View style={styles.cell1}><Text>FGs</Text></View>
+                    <View style={styles.cell1}><Text>3PTs</Text></View>
+                    <View style={styles.cell1}><Text>FTs</Text></View>
+                    <View style={styles.cell2}><Text>OReb</Text></View>
+                    <View style={styles.cell2}><Text>DReb</Text></View>
+                    <View style={styles.cell2}><Text>Ast</Text></View>
+                    <View style={styles.cell2}><Text>Stl</Text></View>
+                    <View style={styles.cell2}><Text>Blk</Text></View>
+                    <View style={styles.cell2}><Text>Fou</Text></View>
+                    <View style={styles.cell2}><Text>Tur</Text></View>
+                    <View style={styles.plus_minus}><Text>+/-</Text></View>
+                </View>
                 {
                     this.state.home.map((item) => {
                         //item.key = item.player_code;
