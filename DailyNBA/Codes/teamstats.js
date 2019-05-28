@@ -50,6 +50,11 @@ export class Teamstats extends Component {
                     <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.points}</Text></View>
                 </View>
                 <View style={styles.row}>
+                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.field_goals_made}/{this.state.visitor.field_goals_attempted}</Text></View>
+                    <View style={styles.type}><Text style={{fontSize: 20}}>Field Goals</Text></View>
+                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.field_goals_made}/{this.state.home.field_goals_attempted}</Text></View>
+                </View>
+                <View style={styles.row}>
                     <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.three_pointers_made}/{this.state.visitor.three_pointers_attempted}</Text></View>
                     <View style={styles.type}><Text style={{fontSize: 20}}>Three Pointers</Text></View>
                     <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.three_pointers_made}/{this.state.home.three_pointers_attempted}</Text></View>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, TouchableOpacity, ScrollView, FlatList, StyleSheet, Button } from 'react-native';
 import { createBottomTabNavigator, createAppContainer, createStackNavigator, } from 'react-navigation';
 import { Icon } from 'react-native-elements'
 import { useScreens } from 'react-native-screens';

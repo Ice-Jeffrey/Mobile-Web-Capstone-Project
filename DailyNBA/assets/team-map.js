@@ -7,7 +7,7 @@ export default {
     team: 'Hawks',
     color: '#E03A3E',
     conf: 'eastern',
-    logo: require('../../assets/img/atl.png')
+    logo: require('../assets/img/atl.png')
   },
   BKN: {
     id: 1610612751,
@@ -15,7 +15,7 @@ export default {
     team: 'Nets',
     color: '#000',
     conf: 'eastern',
-    logo: require('../../assets/img/bkn.png')
+    logo: require('../assets/img/bkn.png')
   },
   BOS: {
     id: 1610612738,
@@ -23,7 +23,7 @@ export default {
     team: 'Celtics',
     color: '#008348',
     conf: 'eastern',
-    logo: require('../../assets/img/bos.png')
+    logo: require('../assets/img/bos.png')
   },
   CHA: {
     id: 1610612766,
@@ -31,7 +31,7 @@ export default {
     team: 'Hornets',
     color: '#008CA8',
     conf: 'eastern',
-    logo: require('../../assets/img/cha.png')
+    logo: require('../assets/img/cha.png')
   },
   CHI: {
     id: 1610612741,
@@ -39,7 +39,7 @@ export default {
     team: 'Bulls',
     color: '#CE1141',
     conf: 'eastern',
-    logo: require('../../assets/img/chi.png')
+    logo: require('../assets/img/chi.png')
   },
   CLE: {
     id: 1610612739,
@@ -47,7 +47,7 @@ export default {
     team: 'Cavaliers',
     color: '#860038',
     conf: 'eastern',
-    logo: require('../../assets/img/cle.png')
+    logo: require('../assets/img/cle.png')
   },
   DAL: {
     id: 1610612742,
@@ -55,7 +55,7 @@ export default {
     team: 'Mavericks',
     color: '#007DC5',
     conf: 'western',
-    logo: require('../../assets/img/dal.png')
+    logo: require('../assets/img/dal.png')
   },
   DEN: {
     id: 1610612743,
@@ -63,7 +63,7 @@ export default {
     team: 'Nuggets',
     color: '#FFB20F',
     conf: 'western',
-    logo: require('../../assets/img/den.png')
+    logo: require('../assets/img/den.png')
   },
   DET: {
     id: 1610612765,
@@ -71,7 +71,7 @@ export default {
     team: 'Pistons',
     color: '#006BB6',
     conf: 'eastern',
-    logo: require('../../assets/img/det.png')
+    logo: require('../assets/img/det.png')
   },
   GSW: {
     id: 1610612744,
@@ -79,7 +79,7 @@ export default {
     team: 'Warriors',
     color: '#FDB927',
     conf: 'western',
-    logo: require('../../assets/img/gsw.png')
+    logo: require('../assets/img/gsw.png')
   },
   HOU: {
     id: 1610612745,
@@ -87,8 +87,8 @@ export default {
     team: 'Rockets',
     color: '#CE1141',
     conf: 'western',
-    logo: require('../../assets/img/hou.png'),
-    logo2: require('../../assets/img/hou2.png')
+    logo: require('../assets/img/hou.png'),
+    logo2: require('../assets/img/hou2.png')
   },
   IND: {
     id: 1610612754,
@@ -96,7 +96,7 @@ export default {
     team: 'Pacers',
     color: '#FFC633',
     conf: 'eastern',
-    logo: require('../../assets/img/ind.png')
+    logo: require('../assets/img/ind.png')
   },
   LAC: {
     id: 1610612746,
@@ -104,7 +104,7 @@ export default {
     team: 'Clippers',
     color: '#222',
     conf: 'western',
-    logo: require('../../assets/img/lac.png')
+    logo: require('../assets/img/lac.png')
   },
   LAL: {
     id: 1610612747,
@@ -112,7 +112,7 @@ export default {
     team: 'Lakers',
     color: '#552582',
     conf: 'western',
-    logo: require('../../assets/img/lal.png')
+    logo: require('../assets/img/lal.png')
   },
   MEM: {
     id: 1610612763,
@@ -120,7 +120,7 @@ export default {
     team: 'Grizzlies',
     color: '#6189B9',
     conf: 'western',
-    logo: require('../../assets/img/mem.png')
+    logo: require('../assets/img/mem.png')
   },
   MIA: {
     id: 1610612748,
@@ -128,7 +128,7 @@ export default {
     team: 'Heat',
     color: '#98002E',
     conf: 'eastern',
-    logo: require('../../assets/img/mia.png')
+    logo: require('../assets/img/mia.png')
   },
   MIL: {
     id: 1610612749,
@@ -136,7 +136,7 @@ export default {
     team: 'Bucks',
     color: '#00471B',
     conf: 'eastern',
-    logo: require('../../assets/img/mil.png')
+    logo: require('../assets/img/mil.png')
   },
   MIN: {
     id: 1610612750,
@@ -144,7 +144,7 @@ export default {
     team: 'Timberwolves',
     color: '#005083',
     conf: 'western',
-    logo: require('../../assets/img/min.png')
+    logo: require('../assets/img/min.png')
   },
   NOP: {
     id: 1610612740,
@@ -152,7 +152,7 @@ export default {
     team: 'Pelicans',
     color: '#002B5C',
     conf: 'western',
-    logo: require('../../assets/img/nop.png')
+    logo: require('../assets/img/nop.png')
   },
   NYK: {
     id: 1610612752,
@@ -160,7 +160,7 @@ export default {
     team: 'Knicks',
     color: '#F58426',
     conf: 'eastern',
-    logo: require('../../assets/img/nyk.png')
+    logo: require('../assets/img/nyk.png')
   },
   OKC: {
     id: 1610612760,
@@ -168,7 +168,7 @@ export default {
     team: 'Thunder',
     color: '#F05133',
     conf: 'western',
-    logo: require('../../assets/img/okc.png')
+    logo: require('../assets/img/okc.png')
   },
   ORL: {
     id: 1610612753,
@@ -176,7 +176,7 @@ export default {
     team: 'Magic',
     color: '#007DC5',
     conf: 'eastern',
-    logo: require('../../assets/img/orl.png')
+    logo: require('../assets/img/orl.png')
   },
   PHI: {
     id: 1610612755,
@@ -184,7 +184,7 @@ export default {
     team: '76ers',
     color: '#006BB6',
     conf: 'eastern',
-    logo: require('../../assets/img/phi.png')
+    logo: require('../assets/img/phi.png')
   },
   PHX: {
     id: 1610612756,
@@ -192,7 +192,7 @@ export default {
     team: 'Suns',
     color: '#E56020',
     conf: 'western',
-    logo: require('../../assets/img/phx.png')
+    logo: require('../assets/img/phx.png')
   },
   POR: {
     id: 1610612757,
@@ -200,7 +200,7 @@ export default {
     team: 'Trail Blazers',
     color: '#000',
     conf: 'western',
-    logo: require('../../assets/img/por.png')
+    logo: require('../assets/img/por.png')
   },
   SAC: {
     id: 1610612758,
@@ -208,7 +208,7 @@ export default {
     team: 'Kings',
     color: '#724C9F',
     conf: 'western',
-    logo: require('../../assets/img/sac.png')
+    logo: require('../assets/img/sac.png')
   },
   SAS: {
     id: 1610612759,
@@ -216,7 +216,7 @@ export default {
     team: 'Spurs',
     color: '#B6BFBF',
     conf: 'western',
-    logo: require('../../assets/img/sas.png')
+    logo: require('../assets/img/sas.png')
   },
   TOR: {
     id: 1610612761,
@@ -224,7 +224,7 @@ export default {
     team: 'Raptors',
     color: '#CE1141',
     conf: 'eastern',
-    logo: require('../../assets/img/tor.png')
+    logo: require('../assets/img/tor.png')
   },
   UTA: {
     id: 1610612762,
@@ -232,7 +232,7 @@ export default {
     team: 'Jazz',
     color: '#00471B',
     conf: 'western',
-    logo: require('../../assets/img/uta.png')
+    logo: require('../assets/img/uta.png')
   },
   WAS: {
     id: 1610612764,
@@ -240,6 +240,6 @@ export default {
     team: 'Wizards',
     color: '#F5002F',
     conf: 'eastern',
-    logo: require('../../assets/img/was.png')
+    logo: require('../assets/img/was.png')
   }
 }
