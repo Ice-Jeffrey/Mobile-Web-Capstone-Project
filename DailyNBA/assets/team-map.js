@@ -1,7 +1,7 @@
 'use strict'
 
 export default {
-  atl: {
+  ATL: {
     id: 1610612737,
     city: 'Atlanta',
     team: 'Hawks',
@@ -9,7 +9,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/atl.png')
   },
-  bkn: {
+  BKN: {
     id: 1610612751,
     city: 'Brooklyn',
     team: 'Nets',
@@ -17,7 +17,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/bkn.png')
   },
-  bos: {
+  BOS: {
     id: 1610612738,
     city: 'Boston',
     team: 'Celtics',
@@ -25,7 +25,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/bos.png')
   },
-  cha: {
+  CHA: {
     id: 1610612766,
     city: 'Charlotte',
     team: 'Hornets',
@@ -33,7 +33,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/cha.png')
   },
-  chi: {
+  CHI: {
     id: 1610612741,
     city: 'Chicago',
     team: 'Bulls',
@@ -41,7 +41,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/chi.png')
   },
-  cle: {
+  CLE: {
     id: 1610612739,
     city: 'Cleveland',
     team: 'Cavaliers',
@@ -49,7 +49,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/cle.png')
   },
-  dal: {
+  DAL: {
     id: 1610612742,
     city: 'Dallas',
     team: 'Mavericks',
@@ -57,7 +57,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/dal.png')
   },
-  den: {
+  DEN: {
     id: 1610612743,
     city: 'Denver',
     team: 'Nuggets',
@@ -65,7 +65,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/den.png')
   },
-  det: {
+  DET: {
     id: 1610612765,
     city: 'Detroit',
     team: 'Pistons',
@@ -73,7 +73,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/det.png')
   },
-  gsw: {
+  GSW: {
     id: 1610612744,
     city: 'Golden State',
     team: 'Warriors',
@@ -81,7 +81,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/gsw.png')
   },
-  hou: {
+  HOU: {
     id: 1610612745,
     city: 'Houston',
     team: 'Rockets',
@@ -90,7 +90,7 @@ export default {
     logo: require('../../assets/img/hou.png'),
     logo2: require('../../assets/img/hou2.png')
   },
-  ind: {
+  IND: {
     id: 1610612754,
     city: 'Indiana',
     team: 'Pacers',
@@ -98,7 +98,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/ind.png')
   },
-  lac: {
+  LAC: {
     id: 1610612746,
     city: 'Los Angeles',
     team: 'Clippers',
@@ -106,7 +106,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/lac.png')
   },
-  lal: {
+  LAL: {
     id: 1610612747,
     city: 'Los Angeles',
     team: 'Lakers',
@@ -114,7 +114,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/lal.png')
   },
-  mem: {
+  MEM: {
     id: 1610612763,
     city: 'Memphis',
     team: 'Grizzlies',
@@ -122,7 +122,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/mem.png')
   },
-  mia: {
+  MIA: {
     id: 1610612748,
     city: 'Miami',
     team: 'Heat',
@@ -130,7 +130,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/mia.png')
   },
-  mil: {
+  MIL: {
     id: 1610612749,
     city: 'Milwaukee',
     team: 'Bucks',
@@ -138,7 +138,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/mil.png')
   },
-  min: {
+  MIN: {
     id: 1610612750,
     city: 'Minnesota',
     team: 'Timberwolves',
@@ -146,7 +146,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/min.png')
   },
-  nop: {
+  NOP: {
     id: 1610612740,
     city: 'New Orleans',
     team: 'Pelicans',
@@ -154,7 +154,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/nop.png')
   },
-  nyk: {
+  NYK: {
     id: 1610612752,
     city: 'New York',
     team: 'Knicks',
@@ -162,7 +162,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/nyk.png')
   },
-  okc: {
+  OKC: {
     id: 1610612760,
     city: 'Oklahoma City',
     team: 'Thunder',
@@ -170,7 +170,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/okc.png')
   },
-  orl: {
+  ORL: {
     id: 1610612753,
     city: 'Orlando',
     team: 'Magic',
@@ -178,7 +178,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/orl.png')
   },
-  phi: {
+  PHI: {
     id: 1610612755,
     city: 'Philadelphia',
     team: '76ers',
@@ -186,7 +186,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/phi.png')
   },
-  phx: {
+  PHX: {
     id: 1610612756,
     city: 'Phoenix',
     team: 'Suns',
@@ -194,7 +194,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/phx.png')
   },
-  por: {
+  POR: {
     id: 1610612757,
     city: 'Portland',
     team: 'Trail Blazers',
@@ -202,7 +202,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/por.png')
   },
-  sac: {
+  SAC: {
     id: 1610612758,
     city: 'Sacramento',
     team: 'Kings',
@@ -210,7 +210,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/sac.png')
   },
-  sas: {
+  SAS: {
     id: 1610612759,
     city: 'San Antonio',
     team: 'Spurs',
@@ -218,7 +218,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/sas.png')
   },
-  tor: {
+  TOR: {
     id: 1610612761,
     city: 'Toronto',
     team: 'Raptors',
@@ -226,7 +226,7 @@ export default {
     conf: 'eastern',
     logo: require('../../assets/img/tor.png')
   },
-  uta: {
+  UTA: {
     id: 1610612762,
     city: 'Utah',
     team: 'Jazz',
@@ -234,7 +234,7 @@ export default {
     conf: 'western',
     logo: require('../../assets/img/uta.png')
   },
-  was: {
+  WAS: {
     id: 1610612764,
     city: 'Washington',
     team: 'Wizards',
