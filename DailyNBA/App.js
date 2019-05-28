@@ -1,38 +1,10 @@
 import React, {Component} from 'react';
-import { Text, View, TouchableOpacity, ScrollView, FlatList, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { createBottomTabNavigator, createAppContainer, createStackNavigator, } from 'react-navigation';
 import { Icon } from 'react-native-elements'
 import { useScreens } from 'react-native-screens';
-
 useScreens();
-
-class GameDetailsScreen extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Details!</Text>
-      </View>
-    );
-  }
-}
-
-class GamesScreen extends Component {
-  static navigationOptions = {
-    title: `${Date().slice(0,15)}`,
-  };
-
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Games</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-      </View>
-    );
-  }
-}
+import AppContainer from './Containers/Games'
 
 class MeScreen extends Component {
   render() {
@@ -54,14 +26,11 @@ class RankingsScreen extends Component {
   }
 }
 
-const HomeStack = createStackNavigator({
-  Home: GamesScreen,
-  Details: GameDetailsScreen,
-});
+
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Games: HomeStack,
+    Games: AppContainer,
     Rankings: RankingsScreen,
     Me: MeScreen,
   },
@@ -99,5 +68,12 @@ const TabNavigator = createBottomTabNavigator(
     },
   }
 );
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF',
+  }
+});
 
 export default createAppContainer(TabNavigator);
