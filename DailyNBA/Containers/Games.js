@@ -105,14 +105,16 @@ class GameDetails extends Component {
   }  
 }
 
-const AppNavigator = createStackNavigator({
-  Home: {
-    screen: Games,
-  },
-  Details: {
-    screen: GameDetails,
-  },
-}, {
+const AppNavigator = createStackNavigator(
+  {
+    Home: {
+      screen: Games,
+    },
+    Details: {
+      screen: GameDetails,
+    },
+  }, 
+  {
     initialRouteName: 'Home',
 });
 
