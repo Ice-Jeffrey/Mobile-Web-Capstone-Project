@@ -66,7 +66,12 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
 )
 
 const HomeStack = createStackNavigator({
-  Home: TopTabNavigator,
+  Home: {
+    screen: TopTabNavigator,
+    navigationOptions: {
+      header: null,
+    }
+  },
   Details: GameDetails,
 });
  
