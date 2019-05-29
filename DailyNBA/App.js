@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { createBottomTabNavigator, createAppContainer, createStackNavigator, } from 'react-navigation';
+import { Text, View } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements'
 import { useScreens } from 'react-native-screens';
 useScreens();
-import AppContainer from './Containers/Games'
+import GamesContainer from './Containers/Games'
 
 class MeScreen extends Component {
   render() {
@@ -26,54 +27,48 @@ class RankingsScreen extends Component {
   }
 }
 
-
-
-const TabNavigator = createBottomTabNavigator(
+const TabNavigator = createMaterialBottomTabNavigator(
   {
-    Games: AppContainer,
-    Rankings: RankingsScreen,
-    Me: MeScreen,
+    Games: {
+      screen: GamesContainer,
+      activeColor: 'white',
+      inactiveColor: 'gray',
+      navigationOptions: {
+        tabBarLabel: 'Games',
+        tabBarColor: 'red',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='ios-basketball' type='ionicon' size={25} color={tintColor}  />
+        ),
+      }
+    },  
+    Rankings: {
+      screen: RankingsScreen,
+      activeColor: 'white',
+      inactiveColor: 'gray',
+      navigationOptions: {
+        tabBarLabel: 'Rankings',
+        tabBarColor: 'orange',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='bars' type='antdesign' size={25} color={tintColor}  />
+        ),
+      }
+    },  
+    Me: {
+      screen: MeScreen,
+      activeColor: 'white',
+      inactiveColor: 'gray',
+      navigationOptions: {
+        tabBarLabel: 'Players',
+        tabBarColor: 'blue',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='person' type='material' size={25} color={tintColor}  />
+        ),
+      }
+    },  
   },
   {
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
-        const { routeName } = navigation.state;
-        let iconName, iconType;
-        if (routeName === 'Games') {
-          iconName = `ios-basketball`;
-          iconType = `ionicon`
-          // Sometimes we want to add badges to some icons. 
-          // You can check the implementation below.
-          //IconComponent = <ion-icon name="basketball"></ion-icon>; 
-        } else if (routeName === 'Rankings') {
-          iconName = `bars`;
-          iconType = `antdesign`
-        } else if (routeName === 'Me') {
-          iconName = 'person',
-          iconType = 'material'
-        }
-
-        // You can return any component that you like here!
-        return <Icon 
-          name={iconName}
-          type={iconType}
-          size={25} 
-          color={tintColor} 
-        />;
-      },
-    }),
-    tabBarOptions: {
-      activeTintColor: 'red',
-      inactiveTintColor: 'gray',
-    },
+    shifting: true,
   }
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  }
-});
 
 export default createAppContainer(TabNavigator);
