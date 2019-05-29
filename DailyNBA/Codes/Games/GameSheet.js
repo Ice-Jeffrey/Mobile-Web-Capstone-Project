@@ -3,22 +3,19 @@ import {View, StyleSheet, TouchableOpacity, FlatList} from 'react-native'
 import {GamesLayout} from './gameslayout'
 
 class GameSheet extends Component {
-    static navigationOptions = {
-        title: `${Date().slice(0,15)}`,
-    };
-
   constructor(props) {
-      super(props);
-      this.state = {
-          games: [
+    super(props);
+    this.state = {
+      date: 20181225,
+      games: [
 
-          ]
-      }
+      ]
+    }
   }
 
   //get the data from the internet
   componentDidMount() {
-    fetch(`http://data.nba.com/data/5s/json/cms/noseason/scoreboard/20181225/games.json`)
+    fetch(`http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${this.props.date}/games.json`)
       .then( response => response.json() )
       .then(data => {
         this.setState({games: data.sports_content.games.game});

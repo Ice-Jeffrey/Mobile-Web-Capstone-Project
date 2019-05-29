@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Dimensions } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements'
@@ -31,11 +31,11 @@ const TabNavigator = createMaterialBottomTabNavigator(
   {
     Games: {
       screen: GamesContainer,
-      activeColor: 'white',
+      activeColor: 'red',
       inactiveColor: 'gray',
       navigationOptions: {
         tabBarLabel: 'Games',
-        tabBarColor: 'red',
+        tabBarColor: '#F5FCFF',
         tabBarIcon: ({ tintColor }) => (
           <Icon name='ios-basketball' type='ionicon' size={25} color={tintColor}  />
         ),
@@ -43,11 +43,11 @@ const TabNavigator = createMaterialBottomTabNavigator(
     },  
     Rankings: {
       screen: RankingsScreen,
-      activeColor: 'white',
+      activeColor: 'red',
       inactiveColor: 'gray',
       navigationOptions: {
         tabBarLabel: 'Rankings',
-        tabBarColor: 'orange',
+        tabBarColor: '#F5FCFF',
         tabBarIcon: ({ tintColor }) => (
           <Icon name='bars' type='antdesign' size={25} color={tintColor}  />
         ),
@@ -55,11 +55,11 @@ const TabNavigator = createMaterialBottomTabNavigator(
     },  
     Me: {
       screen: MeScreen,
-      activeColor: 'white',
+      activeColor: 'red',
       inactiveColor: 'gray',
       navigationOptions: {
         tabBarLabel: 'Players',
-        tabBarColor: 'blue',
+        tabBarColor: '#F5FCFF',
         tabBarIcon: ({ tintColor }) => (
           <Icon name='person' type='material' size={25} color={tintColor}  />
         ),
@@ -67,7 +67,10 @@ const TabNavigator = createMaterialBottomTabNavigator(
     },  
   },
   {
+    activeTintColor: 'red',
+    inactiveTintColor: 'gray',
     shifting: true,
+    barStyle: {height: Dimensions.get('screen').height/12}
   }
 );
 
