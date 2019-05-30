@@ -90,11 +90,13 @@ const HomeStack = createStackNavigator({
     navigationOptions: ({ navigation }) => ({
       headerTitle: (
         <View style={{flex: 1, flexDirection: 'row'}}>
-          <Avatar
-            rounded
-            title='ME'
-            onPress={() => navigation.navigate('DrawerOpen')}
-          />
+          <View style={{alignContent: 'center', justifyContent: 'center', left: 5}}>
+            <Avatar
+              rounded
+              title='ME'
+              onPress={() => navigation.navigate('DrawerOpen')}
+            />
+          </View>
           <SearchSheet navigation={navigation}/>
         </View>
       ),

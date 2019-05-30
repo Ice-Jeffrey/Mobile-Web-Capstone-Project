@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import {Icon} from 'react-native-elements'
 
 export class SearchSheet extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ export class SearchSheet extends Component {
         return (
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchResult', {date: this.state.date})}>
-                    <Text style={styles.searchIcon}>{String.fromCharCode(10003)}</Text>
+                    <Icon name='search' type='material' color="#CCC"/>
                 </TouchableOpacity>
                 <TextInput
                     maxLength={ 8 }
@@ -36,10 +37,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center"
-    },
-    searchIcon: {
-        fontSize: 30,
-        color: "#CCC"
     },
     input: {
         flex: 1,
