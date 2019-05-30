@@ -68,9 +68,17 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
 const HomeStack = createStackNavigator({
   Home: {
     screen: TopTabNavigator,
-    navigationOptions: {
-      header: null,
-    }
+    navigationOptions: ({ navigation }) => ({
+      headerTitleStyle:{
+          alignSelf:'center',
+      },
+      headerLeft: (
+        <Button
+          title='Menu'
+          onPress={() => navigation.navigate('DrawerOpen')}
+        />
+      ),
+    }),
   },
   Details: GameDetails,
 });
