@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import {Dimensions} from 'react-native';
+import {Dimensions, View} from 'react-native';
 import { createAppContainer, createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import GameSheet from '../Codes/Games/GameSheet';
 import GameDetails from '../Codes/Games/GameDetails'
+import { Avatar } from 'react-native-elements';
+import { SearchSheet } from '../Codes/Games/search'
 
 class Yesterday extends Component {
   constructor(props) {
@@ -39,6 +41,10 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
     },
   },
   {
+    initialRouteName: 'Today',
+    defaultNavigationOptions: {
+      header: null
+    },
     tabBarOptions: {
       tabStyle: {
         width: Dimensions.get('screen').width/2
@@ -65,23 +71,43 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
   }
 )
 
+class SearchResult extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: ''
+    }
+  }
+
+  render() {
+    return <GameSheet date={this.props.navigation.getParam('date', null)} navigation={this.props.navigation} />
+  }
+}
+
 const HomeStack = createStackNavigator({
   Home: {
     screen: TopTabNavigator,
     navigationOptions: ({ navigation }) => ({
-      headerTitleStyle:{
-          alignSelf:'center',
-      },
-      headerLeft: (
-        <Avatar
-          rounded
-          title='ME'
-          onPress={() => navigation.navigate('DrawerOpen')}
-        />
+      headerTitle: (
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <Avatar
+            rounded
+            title='ME'
+            onPress={() => navigation.navigate('DrawerOpen')}
+          />
+          <SearchSheet navigation={navigation}/>
+        </View>
       ),
     }),
   },
+  SearchResult: {
+    screen: SearchResult,
+    navigationOptions: ({ navigation }) => {
+      let title = navigation.getParam('date', null);
+      return {headerTitle: title}
+    },
+  },
   Details: GameDetails,
 });
- 
+
 export default createAppContainer(HomeStack)
