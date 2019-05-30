@@ -73,8 +73,9 @@ const HomeStack = createStackNavigator({
           alignSelf:'center',
       },
       headerLeft: (
-        <Button
-          title='Menu'
+        <Avatar
+          rounded
+          title='ME'
           onPress={() => navigation.navigate('DrawerOpen')}
         />
       ),
