@@ -28,10 +28,32 @@ class GameDetails extends Component {
   render() {
     return (
       <ScrollView>
-        <View><Scoresheet general={this.state.general} status={this.state.status}/></View>
-        <View><Leaders id={this.state.id} date={this.state.date}/></View>
-        <View><Teamstats id={this.state.id} date={this.state.date}/></View>
-        <View><Playerstats id={this.state.id} date={this.state.date}/></View>
+        <View>
+          <Scoresheet 
+            id={this.state.id} 
+            date={this.state.date} 
+            status={this.state.status} 
+            general={this.state.general}
+          />
+        </View>
+        <View>
+          <Leaders 
+            id={this.state.id} 
+            date={this.state.date}
+          />
+        </View>
+        <View>
+          <Teamstats 
+            id={this.state.id} 
+            date={this.state.date}
+          />
+        </View>
+        <View>
+          <Playerstats 
+            id={this.state.id} 
+            date={this.state.date}
+          />
+        </View>
       </ScrollView>
     );
   }  

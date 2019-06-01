@@ -10,26 +10,47 @@ export class Scoresheet extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            general: this.props.general
+            id: this.props.id,
+            date: this.props.date,
+            general: this.props.general,
+            visitor: [],
+            home: [],
+            visitorperiod: [],
+            homeperiod: [],
         };
     }
 
+    componentDidMount() {
+        fetch(`http://data.nba.com/data/10s/json/cms/noseason/game/${this.state.date}/${this.state.id}/boxscore.json`)
+            .then( response => response.json() )
+            .then( data => (
+                this.setState({
+                    visitor: data.sports_content.game.visitor,
+                    home: data.sports_content.game.home,
+                    visitorperiod: data.sports_content.game.visitor.linescores.period,
+                    homeperiod: data.sports_content.game.home.linescores.period
+                })
+            ))
+            .catch(error => alert(error)),
+        console.log(this.props.general)
+    }
+
     render() {
-        return(
+        return( 
             <View style={[{height: Height/8 + Height/6}]}>
             <ScrollView>
-                <GamesLayout
+                {<GamesLayout
                     visitor={this.state.general.visitor.team_key}
                     visitorscore={this.state.general.visitor.score}
                     home={this.state.general.home.team_key}
                     homescore={this.state.general.home.score}
                     status={this.props.status}
-                />
+                />}
                 
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start'}}>
                     <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
                         <View style={[styles.scorecell, {width: 50}]}><Text>Team</Text></View>
-                        {this.state.general.visitor.linescores.period.map( (item) => {
+                        {this.state.visitorperiod.map( (item) => {
                             return(
                                 <View style={{flex: 1}}>
                                 <View style={[styles.scorecell]}><Text>{item.period_name}</Text></View>
@@ -39,30 +60,30 @@ export class Scoresheet extends Component {
                     </View>
 
                     <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
-                        <View style={[styles.scorecell, {width: 50}]}><Text>{this.state.general.visitor.team_key}</Text></View>
-                        {this.state.general.visitor.linescores.period.map( (item) => {
+                        <View style={[styles.scorecell, {width: 50}]}><Text>{this.state.visitor.team_key}</Text></View>
+                        {this.state.visitorperiod.map( (item) => {
                             return(
                                 <View style={{flex: 1}}>
                                 <View style={[styles.scorecell]}><Text>{item.score}</Text></View>
                                 </View>
                         )})}
-                        <View style={[styles.scorecell, {width: 50}]}><Text>{this.state.general.visitor.score}</Text></View>
+                        <View style={[styles.scorecell, {width: 50}]}><Text>{this.state.visitor.score}</Text></View>
                     </View>
 
                     <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
-                        <View style={[styles.scorecell, {width: 50}]}><Text>{this.state.general.home.team_key}</Text></View>
-                        {this.state.general.home.linescores.period.map( (item) => {
+                        <View style={[styles.scorecell, {width: 50}]}><Text>{this.state.home.team_key}</Text></View>
+                        {this.state.homeperiod.map( (item) => {
                             return(
                                 <View style={{flex: 1}}>
                                 <View style={[styles.scorecell]}><Text>{item.score}</Text></View>
                                 </View>
                         )})}
-                        <View style={[styles.scorecell, {width: 50}]}><Text>{this.state.general.home.score}</Text></View>
+                        <View style={[styles.scorecell, {width: 50}]}><Text>{this.state.home.score}</Text></View>
                     </View>
                 </View>
             </ScrollView>
             </View>
-        )
+        );
     }
 }
 

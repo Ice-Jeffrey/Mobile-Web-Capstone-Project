@@ -10,10 +10,14 @@ const Width = Dimensions.get('screen').width;
 export class GamesLayout extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      visitor: this.props.visitor,
+      home: this.props.home
+    }
   }
 
   render()  {
-    return (
+    return ( 
       <View style={styles.box}>
         <View style={styles.team}>
           <Image
