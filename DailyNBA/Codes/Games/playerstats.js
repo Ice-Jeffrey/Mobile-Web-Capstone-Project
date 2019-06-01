@@ -42,10 +42,21 @@ export class Playerstats extends Component {
                 <View style={styles.row}>
                     <View style={{width: Width/5}}>
                         <View style={styles.name}><Text>Name</Text></View>
+                        <View style={{flex: 1}}>
                         {this.state.visitor.map((item) => {
                                 //item.key = item.player_code;
-                                return (<View style={styles.col}><View style={styles.name}><Text>{item.last_name}</Text></View></View>)
-                        })}            
+                                return (
+                                    <View style={styles.name}>
+                                        <ScrollView 
+                                            horizontal={true}
+                                            showsHorizontalScrollIndicator={false}
+                                        >
+                                            <Text>{item.last_name}</Text>
+                                        </ScrollView>
+                                    </View>
+                                )
+                        })}     
+                        </View>       
                     </View>
                     <View>
                     <ScrollView horizontal={true} style={{width: Width * 4 / 5, flex: 1}}><View>
@@ -97,7 +108,16 @@ export class Playerstats extends Component {
                         <View style={styles.col}>
                             {this.state.home.map((item) => {
                                     //item.key = item.player_code;
-                                    return (<View style={styles.col}><View style={styles.name}><Text>{item.last_name}</Text></View></View>)
+                                    return (
+                                        <View style={styles.name}>
+                                            <ScrollView 
+                                                horizontal={true}
+                                                showsHorizontalScrollIndicator={false}
+                                            >
+                                                <Text>{item.last_name}</Text>
+                                            </ScrollView>
+                                        </View>
+                                    )
                             })}      
                         </View>      
                     </View>
