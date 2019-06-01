@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
-import {View, ScrollView} from 'react-native'
+import {View, ScrollView, Dimensions} from 'react-native'
 import {Scoresheet} from './scoresheet'
 import {Leaders} from './leaders'
 import {Teamstats} from './teamstats'
 import {Playerstats} from './playerstats'
+
+const Height = Dimensions.get('screen').height * 17/24;
 
 class GameDetails extends Component {
   constructor(props) {
@@ -27,7 +29,7 @@ class GameDetails extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <View style={{flex: 1}}>
         <View>
           <Scoresheet 
             id={this.state.id} 
@@ -36,25 +38,27 @@ class GameDetails extends Component {
             general={this.state.general}
           />
         </View>
-        <View>
-          <Leaders 
-            id={this.state.id} 
-            date={this.state.date}
-          />
-        </View>
-        <View>
-          <Teamstats 
-            id={this.state.id} 
-            date={this.state.date}
-          />
-        </View>
-        <View>
-          <Playerstats 
-            id={this.state.id} 
-            date={this.state.date}
-          />
-        </View>
-      </ScrollView>
+        <ScrollView style={{flex: 1, height: Height}}>
+          <View>
+            <Leaders 
+              id={this.state.id} 
+              date={this.state.date}
+            />
+          </View>
+          <View>
+            <Teamstats 
+              id={this.state.id} 
+              date={this.state.date}
+            />
+          </View>
+          <View>
+            <Playerstats 
+              id={this.state.id} 
+              date={this.state.date}
+            />
+          </View>
+        </ScrollView>
+      </View>
     );
   }  
 }
