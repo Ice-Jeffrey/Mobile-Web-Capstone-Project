@@ -13,9 +13,6 @@ export class SearchSheet extends Component {
     render() {
         return (
             <View style={styles.header}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchResult', {date: this.state.date})}>
-                    <Icon name='search' type='material' color="#CCC"/>
-                </TouchableOpacity>
                 <TextInput
                     maxLength={ 8 }
                     onChangeText = {(text) => this.setState({ date: text })}
@@ -23,8 +20,11 @@ export class SearchSheet extends Component {
                     placeholder = "please input a date like 20190101"
                     blurOnSubmit = {false}
                     returnKeyType = "search"
-                    style = {styles.input}
+                    style={styles.input}
                 />
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchResult', {date: this.state.date})}>
+                    <Icon name='search' type='material' color='black'/>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -35,12 +35,11 @@ const styles = StyleSheet.create({
     header: {
         paddingHorizontal: 16,
         flexDirection: "row",
-        justifyContent: "space-around",
-        alignItems: "center"
+        alignItems:'center'
     },
     input: {
-        flex: 1,
         marginLeft: 16,
-        height: 50
+        height: 50,
+        width: 250
     }
 })

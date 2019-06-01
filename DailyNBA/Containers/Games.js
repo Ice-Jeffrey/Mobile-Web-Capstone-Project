@@ -7,13 +7,27 @@ import { Avatar } from 'react-native-elements';
 import { SearchSheet } from '../Codes/Games/search'
 import {DatePicker} from '../Codes/Games/datepicker'
 
+const Width = Dimensions.get('screen').width;
+
+//get current date
+var date = new Date();
+var nowMonth = date.getMonth() + 1;
+var strDate = date.getDate();
+if (nowMonth >= 1 && nowMonth <= 9) {
+   nowMonth = "0" + nowMonth;
+}
+if (strDate >= 0 && strDate <= 9) {
+   strDate = "0" + strDate;
+}
+const nowDate = date.getFullYear() + nowMonth + strDate;
+
 class Yesterday extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    return <GameSheet date='20181225' navigation={this.props.navigation}/>
+    return <GameSheet date={nowDate-1} navigation={this.props.navigation}/>
   }
 }
 
@@ -23,7 +37,7 @@ class Today extends Component {
   }
 
   render() {
-    return <GameSheet date='20181226' navigation={this.props.navigation}/>
+    return <GameSheet date={nowDate} navigation={this.props.navigation}/>
   }
 }
 
@@ -89,20 +103,22 @@ const HomeStack = createStackNavigator({
   Home: {
     screen: TopTabNavigator,
     navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#0099FF'
+      },
       headerTitle: (
-        <View style={{flex: 1, flexDirection: 'row'}}>
-          <View style={{alignContent: 'center', justifyContent: 'center', left: 5}}>
+        <View style={{flexDirection: 'row', width: Width}}>
+          {<View style={{alignContent: 'center', justifyContent: 'center', left: 5}}>
             <Avatar
               rounded
               title='ME'
-              //onPress={() => navigation.openDrawer()}
+              onPress={() => navigation.navigate('DrawerOpen')}
             />
-          </View>
-          
-          <View style={{alignContent: 'center', justifyContent: 'center'}}>
+          </View>}
+          <View style={{alignContent: 'center', justifyContent: 'center', left: 15}}>
             <DatePicker navigation={navigation} />
           </View>
-          <View style={{width: 800}}>
+          <View>
             <SearchSheet navigation={navigation}/>
           </View>
           
