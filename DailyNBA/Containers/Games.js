@@ -5,6 +5,7 @@ import GameSheet from '../Codes/Games/GameSheet';
 import GameDetails from '../Codes/Games/GameDetails'
 import { Avatar } from 'react-native-elements';
 import { SearchSheet } from '../Codes/Games/search'
+import {DatePicker} from '../Codes/Games/datepicker'
 
 class Yesterday extends Component {
   constructor(props) {
@@ -94,10 +95,17 @@ const HomeStack = createStackNavigator({
             <Avatar
               rounded
               title='ME'
-              onPress={() => navigation.navigate('DrawerOpen')}
+              //onPress={() => navigation.openDrawer()}
             />
           </View>
-          <SearchSheet navigation={navigation}/>
+          
+          <View style={{alignContent: 'center', justifyContent: 'center'}}>
+            <DatePicker navigation={navigation} />
+          </View>
+          <View style={{width: 800}}>
+            <SearchSheet navigation={navigation}/>
+          </View>
+          
         </View>
       ),
     }),
