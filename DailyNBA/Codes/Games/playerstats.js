@@ -59,7 +59,7 @@ export class Playerstats extends Component {
                         </View>       
                     </View>
                     <View>
-                    <ScrollView horizontal={true} style={{width: Width * 4 / 5, flex: 1}}><View>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{width: Width * 4 / 5, flex: 1}}><View>
                         <View style={styles.row}>
                             <View style={styles.cell}><Text>Min</Text></View>
                             <View style={styles.cell}><Text>Pts</Text></View>
@@ -122,7 +122,7 @@ export class Playerstats extends Component {
                         </View>      
                     </View>
                     <View>
-                    <ScrollView horizontal={true} style={{width: Width * 4 / 5, flex: 1}}><View>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{width: Width * 4 / 5, flex: 1}}><View>
                         <View style={styles.row}>
                             <View style={styles.cell}><Text>Min</Text></View>
                             <View style={styles.cell}><Text>Pts</Text></View>
