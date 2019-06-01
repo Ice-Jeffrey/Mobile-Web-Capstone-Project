@@ -28,9 +28,9 @@ export class Teamstats extends Component {
                 this.setState({
                     visitor: data.sports_content.game.visitor.stats,
                     home: data.sports_content.game.home.stats
-                }),
-                console.log(this.state.visitor),
-                console.log(this.state.home)  
+                })
+               // console.log(this.state.visitor),
+               // console.log(this.state.home)  
             ))
             .catch(error => alert(error))
     }

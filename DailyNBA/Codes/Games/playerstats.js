@@ -28,9 +28,9 @@ export class Playerstats extends Component {
                 this.setState({
                     visitor: data.sports_content.game.visitor.players.player,
                     home: data.sports_content.game.home.players.player
-                }),
-                console.log(this.state.visitor),
-                console.log(this.state.home)  
+                })
+                //console.log(this.state.visitor),
+                //console.log(this.state.home)  
             ))
             .catch(error => alert(error))
     }

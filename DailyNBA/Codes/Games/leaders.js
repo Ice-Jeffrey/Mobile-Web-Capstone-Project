@@ -27,9 +27,9 @@ export class Leaders extends Component {
                 this.setState({
                     visitor: data.sports_content.game.visitor.Leaders,
                     home: data.sports_content.game.home.Leaders
-                }),
-                console.log(this.state.visitor),
-                console.log(this.state.home)  
+                })
+                //console.log(this.state.visitor),
+                //console.log(this.state.home)  
             ))
             .catch(error => alert(error))
     }
