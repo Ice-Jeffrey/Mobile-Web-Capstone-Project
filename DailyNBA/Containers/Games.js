@@ -10,7 +10,7 @@ import {DatePicker} from '../Codes/Games/datepicker'
 const Width = Dimensions.get('screen').width;
 
 //get current date
-var date = new Date();
+var date = new Date() - 1000 * 3600 * 24;
 var nowMonth = date.getMonth() + 1;
 var strDate = date.getDate();
 if (nowMonth >= 1 && nowMonth <= 9) {
