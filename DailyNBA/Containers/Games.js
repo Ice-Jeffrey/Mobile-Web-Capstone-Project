@@ -21,13 +21,26 @@ if (strDate >= 0 && strDate <= 9) {
 }
 const nowDate = date.getFullYear() + nowMonth + strDate;
 
+//get yesterday's date
+var lastdate = new Date() - 2 * 1000 * 3600 * 24;
+var nowMonth2 = lastdate.getMonth() + 1;
+var strDate2 = lastdate.getDate();
+if (nowMonth2 >= 1 && nowMonth2 <= 9) {
+   nowMonth2 = "0" + nowMonth2;
+}
+if (strDate2 >= 0 && strDate2 <= 9) {
+   strDate2 = "0" + strDate2;
+}
+const nowDate2 = lastdate.getFullYear() + nowMonth2 + strDate2;
+
+
 class Yesterday extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    return <GameSheet date={nowDate-1} navigation={this.props.navigation}/>
+    return <GameSheet date={nowDate2} navigation={this.props.navigation}/>
   }
 }
 
