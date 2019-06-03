@@ -7,7 +7,10 @@ const stacknavigation = createStackNavigator({
     Home:{
         screen:Webview,
         navigationOptions:{
-            headerTitle: 'Sports News'
+            headerTitle: 'Sports News',
+            headerStyle: {
+                backgroundColor: '#0099FF'
+            }
         }
     },
     Detail:{

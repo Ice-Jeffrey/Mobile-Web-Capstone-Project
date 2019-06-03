@@ -3,7 +3,6 @@ import {Dimensions, View} from 'react-native';
 import { createAppContainer, createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import GameSheet from '../Codes/Games/GameSheet';
 import GameDetails from '../Codes/Games/GameDetails'
-import { Avatar } from 'react-native-elements';
 import { SearchSheet } from '../Codes/Games/search'
 import {DatePicker} from '../Codes/Games/datepicker'
 
@@ -131,7 +130,7 @@ const HomeStack = createStackNavigator({
       },
       headerTitle: (
         <View style={{flexDirection: 'row', width: Width, paddingHorizontal: 16}}>
-          <View>
+          <View style={{alignItems: 'center', justifyContent: 'center'}}>
             <DatePicker navigation={navigation} />
           </View>
           <View>
