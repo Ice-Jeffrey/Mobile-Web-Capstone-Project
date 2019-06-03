@@ -9,29 +9,37 @@ import {DatePicker} from '../Codes/Games/datepicker'
 
 const Width = Dimensions.get('screen').width;
 
-//get current date
-var date = new Date() - 1000 * 3600 * 24;
-var nowMonth = date.getMonth() + 1;
-var strDate = date.getDate();
-if (nowMonth >= 1 && nowMonth <= 9) {
-   nowMonth = "0" + nowMonth;
-}
-if (strDate >= 0 && strDate <= 9) {
-   strDate = "0" + strDate;
-}
-const nowDate = date.getFullYear() + nowMonth + strDate;
+var date = new Date(); //获取当前日期时间戳
 
-//get yesterday's date
-var lastdate = new Date() - 2 * 1000 * 3600 * 24;
-var nowMonth2 = lastdate.getMonth() + 1;
-var strDate2 = lastdate.getDate();
-if (nowMonth2 >= 1 && nowMonth2 <= 9) {
-   nowMonth2 = "0" + nowMonth2;
+var before = date - 1000*60*60*24;//当前日期时间戳减去一天时间戳
+var beforebefore = date - 1000*60*60*24*2;
+
+var today = new Date(before);//将时间戳转化为Date对象
+var yesterday = new Date(beforebefore);
+
+// get the month
+var todayMonth = today.getMonth() + 1;
+var yesterdayMonth = yesterday.getMonth() + 1;
+// get the date
+var todayDate = today.getDate();
+var yesterdayDate = yesterday.getDate();
+// make adjustments to the month
+if (todayMonth >= 1 && todayMonth <= 9) {
+  todayMonth = "0" + todayMonth;
 }
-if (strDate2 >= 0 && strDate2 <= 9) {
-   strDate2 = "0" + strDate2;
+if (yesterdayMonth >= 1 && yesterdayMonth <= 9) {
+  yesterdayMonth = '0' + yesterdayMonth;
 }
-const nowDate2 = lastdate.getFullYear() + nowMonth2 + strDate2;
+// made adjustments to the date
+if (todayDate >= 0 && todayDate <= 9) {
+  todayDate = "0" + todayDate;
+}
+if (yesterdayDate >= 0 && yesterdayDate <= 9) {
+  yesterdayDate = '0' + yesterdayDate;
+}
+// get the date of yyyy-MM-dd format
+var nowDate = today.getFullYear() + todayMonth + todayDate;
+var yesDate = yesterday.getFullYear() + yesterdayMonth + yesterdayDate;
 
 
 class Yesterday extends Component {
@@ -40,7 +48,7 @@ class Yesterday extends Component {
   }
 
   render() {
-    return <GameSheet date={nowDate2} navigation={this.props.navigation}/>
+    return <GameSheet date={yesDate} navigation={this.props.navigation}/>
   }
 }
 
