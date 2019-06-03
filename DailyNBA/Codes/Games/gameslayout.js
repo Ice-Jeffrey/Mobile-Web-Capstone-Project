@@ -22,7 +22,7 @@ export class GamesLayout extends Component {
         <View style={styles.team}>
           <Image
             style={styles.teamImage}
-            source={teams[this.props.visitor].logo} 
+            source={teams[this.props.visitor.toLowerCase()].logo} 
           />
           <Text>VISITOR</Text>    
         </View>
@@ -32,7 +32,7 @@ export class GamesLayout extends Component {
         <View style={styles.team}>
           <Image
             style={styles.teamImage}
-            source={teams[this.props.home].logo}
+            source={teams[this.props.home.toLowerCase()].logo}
           />
           <Text>HOME</Text>    
         </View>

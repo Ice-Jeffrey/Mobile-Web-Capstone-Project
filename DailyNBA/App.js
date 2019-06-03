@@ -6,22 +6,14 @@ import { Icon } from 'react-native-elements'
 import { useScreens } from 'react-native-screens';
 useScreens();
 import GamesContainer from './Containers/Games'
+import RankingsContainer from './Containers/Rankings'
+import WebContainer from './Containers/Web'
 
 class MeScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Me</Text>
-      </View>
-    );
-  }
-}
-
-class RankingsScreen extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Rankings</Text>
       </View>
     );
   }
@@ -42,7 +34,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
       }
     },  
     Rankings: {
-      screen: RankingsScreen,
+      screen: RankingsContainer,
       activeColor: 'red',
       inactiveColor: 'gray',
       navigationOptions: {
@@ -53,6 +45,18 @@ const TabNavigator = createMaterialBottomTabNavigator(
         ),
       }
     },  
+    Web: {
+      screen: WebContainer,
+      activeColor: 'red',
+      inactiveColor: 'gray',
+      navigationOptions: {
+        tabBarLabel: 'News',
+        tabBarColor: '#F5FCFF',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='book' type='ionicon' size={25} color={tintColor}  />
+        ),
+      }
+    },
     Me: {
       screen: MeScreen,
       activeColor: 'red',
@@ -65,7 +69,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
         ),
       }
     },  
-  },
+  },  
   {
     activeTintColor: 'red',
     inactiveTintColor: 'gray',

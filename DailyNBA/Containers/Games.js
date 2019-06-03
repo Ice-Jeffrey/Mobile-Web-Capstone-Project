@@ -85,6 +85,7 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
       tabStyle: {
         width: Dimensions.get('screen').width/2
       },
+      upperCaseLabel:false,
       scrollEnabled: true,//是否支持 选项卡滚动，默认false
       activeTintColor: 'red',//label和icon的前景色 活跃状态下（选中）
       inactiveTintColor: 'gray',//label和icon的前景色 活跃状态下（未选中）
@@ -96,7 +97,7 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
       },
       indicatorStyle: {
           height: 2,
-          backgroundColor: 'white',
+          backgroundColor: 'red',
       },//标签指示器的样式
       labelStyle: {
           fontSize: 13,
@@ -125,24 +126,17 @@ const HomeStack = createStackNavigator({
     screen: TopTabNavigator,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: '#0099FF'
+        backgroundColor: '#0099FF',
+        alignItems: 'center'
       },
       headerTitle: (
-        <View style={{flexDirection: 'row', width: Width}}>
-          {<View style={{alignContent: 'center', justifyContent: 'center', left: 5}}>
-            <Avatar
-              rounded
-              title='ME'
-              onPress={() => navigation.navigate('DrawerOpen')}
-            />
-          </View>}
-          <View style={{alignContent: 'center', justifyContent: 'center', left: 15}}>
+        <View style={{flexDirection: 'row', width: Width, paddingHorizontal: 16}}>
+          <View style={{alignContent: 'center', justifyContent: 'center'}}>
             <DatePicker navigation={navigation} />
           </View>
           <View>
             <SearchSheet navigation={navigation}/>
           </View>
-          
         </View>
       ),
     }),
