@@ -24,7 +24,7 @@ export class GamesLayout extends Component {
             style={styles.teamImage}
             source={teams[this.props.visitor].logo} 
           />
-          <Text>AWAY</Text>    
+          <Text>VISITOR</Text>    
         </View>
         <View style={styles.score}><Text>{this.props.visitor}</Text></View>
         <View style={styles.score}><Text>{this.props.visitorscore} - {this.props.homescore}</Text></View>

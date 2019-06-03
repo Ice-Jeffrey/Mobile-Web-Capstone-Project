@@ -40,7 +40,7 @@ export class Teamstats extends Component {
             <View style={styles.container}>
                 <Text style={{fontSize: 25}}>{'\n'}Team Stats</Text>
                 <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
-                    <View style={{alignItems: 'center', width: Width/3}}><Text style={{fontSize: 20}}>AWAY</Text></View>
+                    <View style={{alignItems: 'center', width: Width/3}}><Text style={{fontSize: 20}}>VISITOR</Text></View>
                     <View style={{alignItems: 'center', width: Width/3}} />
                     <View style={{alignItems: 'center', width: Width/3}}><Text style={{fontSize: 20}}>HOME</Text></View>
                 </View>

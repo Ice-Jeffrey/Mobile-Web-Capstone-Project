@@ -41,7 +41,7 @@ export class Leaders extends Component {
                 <View style={styles.container}>
                     
                     <View style={styles.row}>
-                        <View style={styles.titleCell}><Text style={{fontSize: 20}}>AWAY</Text></View>
+                        <View style={styles.titleCell}><Text style={{fontSize: 20}}>VISITOR</Text></View>
                         <View style={styles.titleCell} />
                         <View style={styles.titleCell}><Text style={{fontSize: 20}}>HOME</Text></View>
                     </View>
