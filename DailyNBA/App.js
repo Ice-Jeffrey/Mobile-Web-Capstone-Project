@@ -53,7 +53,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
         tabBarLabel: 'News',
         tabBarColor: '#F5FCFF',
         tabBarIcon: ({ tintColor }) => (
-          <Icon name='book' type='ionicon' size={25} color={tintColor}  />
+          <Icon name='assignment' type='material' size={25} color={tintColor}  />
         ),
       }
     },

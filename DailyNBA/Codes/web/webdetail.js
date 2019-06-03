@@ -44,7 +44,9 @@ export default class Webdetail extends Component {
                     <TextInput style={styles.input}
                             placeholder={'Please input the web you want to search'}
                             onChangeText={text=>this.text=text}></TextInput>
-                    <Text style={[styles.text, {marginRight: 10}]} onPress={()=>{this.onNext()}}>GO</Text>
+                    <TouchableOpacity style={[{marginLeft: 5, marginRight: 10}]} onPress={()=>{this.onNext()}}>
+                        <Icon name='search' type='material' color='black'/>
+                    </TouchableOpacity>
                 </View>
                 <WebView source={{uri:this.state.url}}
                         onNavigationStateChange={(e)=>this.onNavigationStateChange(e)}
