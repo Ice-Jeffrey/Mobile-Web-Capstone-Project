@@ -26,11 +26,9 @@ const topNavigator = createMaterialTopTabNavigator({
 },{
     swipeEnabled:true,
     animationEnabled:true,
-    tabBarOptions:({navigation})=>({
+    tabBarOptions:{
         upperCaseLabel:false, 
-
-    })
-    
+    }
 })
 
 

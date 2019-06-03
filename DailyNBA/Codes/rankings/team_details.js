@@ -15,8 +15,8 @@ export default class TeamDeatails extends Component {
     <View 
       style={[styles.container]} 
     >
-      <Image source={teams[navigation.state.params.name].logo} style={{width:45,height:45}}/>
-      <Text style={styles.font}>{teams[navigation.state.params.name].team}</Text>
+      <Image source={teams[navigation.state.params.name].logo} style={{width:40,height:40}}/>
+      <View style={{alignItems: 'center' ,justifyContent: 'center'}}><Text style={styles.font}>{teams[navigation.state.params.name].team}</Text></View>
     </View>      
 
   })
@@ -46,11 +46,9 @@ export default class TeamDeatails extends Component {
       container: {
         flex:1,
         flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'center',
       },
       font:{
-        fontSize:30,
+        fontSize: 20,
         fontStyle: 'normal',
         color:'white',
 

@@ -131,7 +131,7 @@ const HomeStack = createStackNavigator({
       },
       headerTitle: (
         <View style={{flexDirection: 'row', width: Width, paddingHorizontal: 16}}>
-          <View style={{alignContent: 'center', justifyContent: 'center'}}>
+          <View>
             <DatePicker navigation={navigation} />
           </View>
           <View>
