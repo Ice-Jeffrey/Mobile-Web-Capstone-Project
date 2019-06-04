@@ -55,6 +55,7 @@ export class Scoresheet extends Component {
                     borderColor: '#f5f5f5',
                     marginLeft: 1,
                     marginRight: 1,
+                    heigth: Height * 7/24
                 }}>
                     <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
                         <View style={[styles.scorecell, {width: 50}]}><Text>Team</Text></View>

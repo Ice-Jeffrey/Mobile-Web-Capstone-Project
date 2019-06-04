@@ -12,23 +12,27 @@ export default class DetailsScreen extends React.Component {
     }
     static navigationOptions = {
         title: 'PLAYER_DETAILS',
+        headerStyle: {
+            backgroundColor: '#0099CC'
+        },
+        headerTintColor: 'white'
     };
     
     RenderItem = (item) => {
         return (
             <View style={styles.dlittleboxheadstyle}>
                 <View style={styles.dplayerinfostyle}> 
-                    <Text style={{color:"black",fontSize:20,fontWeight:"500"}}>
+                    <Text style={{color:"black",fontSize:20,fontWeight:"350"}}>
                         {item.item.dataitem}
                     </Text>
                 </View>
                 <View style={styles.ddatastyle}>
-                    <Text style={{color:"black"}}>
+                    <Text style={{color:"black", fontSize: 18}}>
                         {item.item.data}
                     </Text>
                 </View>
                 <View style={styles.drankstyle}>
-                    <Text style={{color:"black"}}>
+                    <Text style={{color:"black", fontSize: 18}}>
                         {item.item.rank}
                     </Text>
                 </View>
@@ -57,26 +61,28 @@ export default class DetailsScreen extends React.Component {
         }
         return (
             <View style={{ flex: 1 }}>
-                <View style={styles.headstyle}>
-                <Text style={styles.namestyle}>
-                    {Datas[2]}
-                </Text>                   
-                </View>
-                <View style={styles.littleboxheadstyle}>
-                    <View style={styles.playerinfostyle}>
-                    <Text style={{fontSize:23,fontWeight:"500",color:"black"}}>
-                      PLAYER_INFO  
-                    </Text>
+                <View style={{ borderRadius: 20, backgroundColor: 'pink'}}>
+                    <View style={styles.headstyle}>
+                    <Text style={styles.namestyle}>
+                        {Datas[2]}
+                    </Text>                   
                     </View>
-                    <View style={styles.datastyle}>
-                    <Text style={{fontSize:23,fontWeight:"500",color:"black"}} >
-                        DATA
-                    </Text>
-                    </View>
-                    <View style={styles.rankstyle}>
-                    <Text style={{fontSize:23,fontWeight:"500",color:"black"}}>
-                        RANKS
-                    </Text> 
+                    <View style={styles.littleboxheadstyle}>
+                        <View style={styles.playerinfostyle}>
+                        <Text style={{fontSize:20,fontWeight:"500",color:"black"}}>
+                        PLAYER_INFO  
+                        </Text>
+                        </View>
+                        <View style={styles.datastyle}>
+                        <Text style={{fontSize:20,fontWeight:"500",color:"black"}} >
+                            DATA
+                        </Text>
+                        </View>
+                        <View style={styles.rankstyle}>
+                        <Text style={{fontSize:20,fontWeight:"500",color:"black"}}>
+                            RANKS
+                        </Text> 
+                        </View>
                     </View>
                 </View>
                 <FlatList
@@ -86,7 +92,7 @@ export default class DetailsScreen extends React.Component {
                         renderItem={this.RenderItem}
                         keyExtractor={(item, index) => index}
                 />
-                                        
+                                     
         </View>);
     }
 }
@@ -100,14 +106,15 @@ const styles = StyleSheet.create({
     namestyle: {
         fontSize: 40,
         fontWeight: "500",
-        color:"black"
+        color:"black",
         
     },
     littleboxheadstyle: {
         flexDirection: "row",
-        height: Dimensions.get('window').height / 10,
-        backgroundColor: "lightblue",
-        borderRadius:7
+        height: Dimensions.get('window').height / 15,
+        backgroundColor: "#FFFF99",
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30
     },
     playerinfostyle: {
         width: Dimensions.get('window').width / 2,
@@ -119,14 +126,14 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems:"center"
     },
-   rankstyle:{
+    rankstyle:{
        width: Dimensions.get('window').width / 4,
        justifyContent: "center",
        alignItems:"center"
     },
     dlittleboxheadstyle: {
         flexDirection: "row",
-        height: Dimensions.get('window').height / 14,
+        height: Dimensions.get('window').height / 18,
     },
     dplayerinfostyle: {
         width: Dimensions.get('window').width / 2,
@@ -148,5 +155,8 @@ const styles = StyleSheet.create({
        alignItems: "center",
        borderWidth: 1,
        borderColor:"silver"
+   },
+   FlatListStyle: {
+       marginBottom: 0
    }
 })

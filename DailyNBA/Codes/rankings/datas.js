@@ -16,15 +16,14 @@ export default class datas extends Component{
         return(
             <ScrollView>
                 <View style={{flexDirection:'row',marginLeft:5,marginTop:10}}>
-                    <View style={{width:width/3,flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
-                        <Text style={{fontSize:20,fontWeight:'bold'}}>Season</Text>
-                        <Text style={{fontSize:20,fontWeight:'bold'}}>2018-19</Text>                        
+                    <View style={styles.title}>
+                        <Text style={styles.text1}>2018-19</Text>                        
                     </View>
-                    <View style={{width:width/3,alignItems:'center',justifyContent:'center'}}>
-                        <Text style={{fontSize:20,fontWeight:'bold'}}>Data</Text>                        
+                    <View style={styles.title}>
+                        <Text style={styles.text1}>Data</Text>                        
                     </View>
-                    <View style={{width:width/3,alignItems:'center',justifyContent:'center'}}>
-                        <Text style={{fontSize:20,fontWeight:'bold'}}>Rank</Text>
+                    <View style={styles.title}>
+                        <Text style={styles.text1}>Rank</Text>
                     </View>   
                 </View>
                 {playerinfo[this.state.name].info.resultSets[0].rowSet[0].map((element,index) => {
@@ -32,13 +31,13 @@ export default class datas extends Component{
                         return(
                             <View style={{flexDirection:'row',margin:3}}>
                                 <View style={{width:width/3,alignItems:'center'}}>
-                                    <Text>{playerinfo[this.state.name].info.resultSets[0].headers[index]}</Text>                        
+                                    <Text style={styles.text}>{playerinfo[this.state.name].info.resultSets[0].headers[index]}</Text>                        
                                 </View>
                                 <View style={{width:width/3,alignItems:'center'}}>
-                                    <Text>{element}</Text>                        
+                                    <Text style={styles.text}>{element}</Text>                        
                                 </View>
                                 <View style={{width:width/3,alignItems:'center'}}>
-                                    <Text>{playerinfo[this.state.name].info.resultSets[0].rowSet[0][index+26]}</Text>   
+                                    <Text style={styles.text}>{playerinfo[this.state.name].info.resultSets[0].rowSet[0][index+26]}</Text>   
                                 </View>
                             </View>                                               
                         )
@@ -49,3 +48,20 @@ export default class datas extends Component{
         )
     }
 }
+
+const styles = StyleSheet.create({
+    text: {
+        color: 'black'
+    },
+    text1:{
+        fontSize:20,
+        fontWeight:'bold', 
+        color: 'black',
+    },
+    title:{
+        width:width/3,
+        alignItems:'center',
+        justifyContent:'center',
+        borderBottomWidth:StyleSheet.hairlineWidth,
+    }
+})

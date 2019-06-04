@@ -45,7 +45,7 @@ class Header extends Component {
                 </View>
                 <View style={{marginRight: 10}}>
                     <TouchableOpacity onPress={this._onPress}>
-                        <Icon name='search' type='material' color='#ccc'/>
+                        <Icon name='search' type='material' color='black'/>
                     </TouchableOpacity>
                 </View>
             </View>                     

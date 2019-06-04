@@ -6,7 +6,7 @@ export default {
     city: 'Atlanta',
     team: 'Hawks',
     color: '#E03A3E',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/atl.png'),
     time:1949,
     stadium:'State Farm Arena'
@@ -16,7 +16,7 @@ export default {
     city: 'Brooklyn',
     team: 'Nets',
     color: '#000',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/bkn.png'),
     time:1967,
     stadium:'Barclays Center'
@@ -26,7 +26,7 @@ export default {
     city: 'Boston',
     team: 'Celtics',
     color: '#008348',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/bos.png'),
     time:1946,
     stadium: 'TD Bank North Garden'
@@ -36,7 +36,7 @@ export default {
     city: 'Charlotte',
     team: 'Hornets',
     color: '#008CA8',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/cha.png'),
     time:2004,
     stadium:'Spectrum Center'
@@ -46,7 +46,7 @@ export default {
     city: 'Chicago',
     team: 'Bulls',
     color: '#CE1141',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/chi.png'),
     stadium: 'United Center',
     time:1966
@@ -56,7 +56,7 @@ export default {
     city: 'Cleveland',
     team: 'Cavaliers',
     color: '#860038',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/cle.png'),
     stadium: 'Quicken Loans Arena',
     time:1970
@@ -66,7 +66,7 @@ export default {
     city: 'Dallas',
     team: 'Mavericks',
     color: '#007DC5',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/dal.png'),
     stadium: 'American Airlines Center',
     time:1980
@@ -76,7 +76,7 @@ export default {
     city: 'Denver',
     team: 'Nuggets',
     color: '#FFB20F',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/den.png'),
     stadium: 'Pepsi Center',
     time:1976
@@ -86,7 +86,7 @@ export default {
     city: 'Detroit',
     team: 'Pistons',
     color: '#006BB6',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/det.png'),
     time:1948,
     stadium:'The Palace of Auburn Hills'
@@ -96,7 +96,7 @@ export default {
     city: 'Golden State',
     team: 'Warriors',
     color: '#FDB927',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/gsw.png'),
     stadium: 'Oracle Arena',
     time:1946
@@ -106,7 +106,7 @@ export default {
     city: 'Houston',
     team: 'Rockets',
     color: '#CE1141',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/hou.png'),
     logo2: require('../assets/img/hou1.png'),
     stadium: 'Toyota Center',
@@ -117,7 +117,7 @@ export default {
     city: 'Indiana',
     team: 'Pacers',
     color: '#FFC633',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/ind.png'),
     time:1976,
     stadium:'Bankers Life Fieldhouse'
@@ -127,7 +127,7 @@ export default {
     city: 'Los Angeles',
     team: 'Clippers',
     color: '#222',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/lac.png'),
     stadium: 'Staples Center',
     time:1970
@@ -138,7 +138,7 @@ export default {
     city: 'Los Angeles',
     team: 'Lakers',
     color: '#552582',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/lal.png'),
     stadium: 'Staples Center',
     time:1948
@@ -148,7 +148,7 @@ export default {
     city: 'Memphis',
     team: 'Grizzlies',
     color: '#6189B9',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/mem.png'),
     time:1995,
     stadium:'Fed Ex Forum'
@@ -158,7 +158,7 @@ export default {
     city: 'Miami',
     team: 'Heat',
     color: '#98002E',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/mia.png'),
     stadium: 'American Airlines Arena',
     time:1988
@@ -168,7 +168,7 @@ export default {
     city: 'Milwaukee',
     team: 'Bucks',
     color: '#00470B',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/mil.png'),
     time:1968,
     stadium:'Fiserv Forum'
@@ -178,7 +178,7 @@ export default {
     city: 'Minnesota',
     team: 'Timberwolves',
     color: '#005083',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/min.png'),
     stadium: 'Target Center',
     time:1989
@@ -188,7 +188,7 @@ export default {
     city: 'New Orleans',
     team: 'Pelicans',
     color: '#002B5C',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/nop.png'),
     time:1988,
     stadium:'Smoothie King Center'
@@ -198,7 +198,7 @@ export default {
     city: 'New York',
     team: 'Knicks',
     color: '#F58426',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/nyk.png'),
     stadium: 'Madison Square Garden',
     time:1946
@@ -208,7 +208,7 @@ export default {
     city: 'Oklahoma City',
     team: 'Thunder',
     color: '#F05133',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/okc.png'),
     stadium: 'Chesapeake Energy Arena',
     time:1967
@@ -218,7 +218,7 @@ export default {
     city: 'Orlando',
     team: 'Magic',
     color: '#007DC5',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/orl.png'),
     stadium: 'Amway Arena',
     time:1989
@@ -228,7 +228,7 @@ export default {
     city: 'Philadelphia',
     team: '76ers',
     color: '#006BB6',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/phi.png'),
     time:1967,
     stadium:'Wells Fargo Center'
@@ -238,7 +238,7 @@ export default {
     city: 'Phoenix',
     team: 'Suns',
     color: '#E56020',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/phx.png'),
     time:1968,
     stadium:'Talking Stick Resort Arena'
@@ -248,7 +248,7 @@ export default {
     city: 'Portland',
     team: 'Trail Blazers',
     color: '#000',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/por.png'),
     stadium: 'Moda Center',
     time:1970
@@ -258,7 +258,7 @@ export default {
     city: 'Sacramento',
     team: 'Kings',
     color: '#724C9F',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/sac.png'),
     stadium: 'Golden I Arena',
     time:1948
@@ -268,7 +268,7 @@ export default {
     city: 'San Antonio',
     team: 'Spurs',
     color: '#B6BFBF',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/sas.png'),
     stadium: 'AT&T Center',
     time:1976
@@ -278,7 +278,7 @@ export default {
     city: 'Toronto',
     team: 'Raptors',
     color: '#CE1141',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/tor.png'),
     time:1995,
     stadium:'Scotiabank Arena'
@@ -288,7 +288,7 @@ export default {
     city: 'Utah',
     team: 'Jazz',
     color: '#00471B',
-    conf: 'western',
+    conf: 'Western',
     logo: require('../assets/img/uta.png'),
     stadium: 'Vivint Smart Home Stadium',
     time:1974
@@ -298,7 +298,7 @@ export default {
     city: 'Washington',
     team: 'Wizards',
     color: '#F5002F',
-    conf: 'eastern',
+    conf: 'Eastern',
     logo: require('../assets/img/was.png'),
     stadium: 'Verizon Center',
     time:1961

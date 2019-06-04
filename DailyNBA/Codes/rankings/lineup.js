@@ -19,12 +19,12 @@ export default class lineup extends Component{
         return(
             <View style={{flexDirection:'row',margin:5}}>
                 <View style={{margin:5}}>
-                    <Text style={{fontSize:20,fontWeight:'bold'}}>name</Text>
+                    <Text style={styles.title}>Name</Text>
                     {playerinfo[this.state.name].basic.resultSets[0].rowSet.map((element,index)=>{
                         return(
 
                             <View style={{flexDirection:'column',marginBottom:5}}>
-                                <Text>{element[3]}</Text>                                            
+                                <Text style={styles.text}>{element[3]}</Text>                                            
                             </View>                                                     
                     )                            
                     })}                    
@@ -37,38 +37,38 @@ export default class lineup extends Component{
                 >
                     <View style={{margin:6}}>
                         <View style={{flexDirection:'row'}}>
-                            <Text style={{width:width/5,alignItems:'center',fontSize:20,fontWeight:'bold'}}>Number</Text>
-                            <Text style={{width:width/5,alignItems:'center',fontSize:20,fontWeight:'bold'}}>Position</Text>
-                            <Text style={{width:width/5,alignItems:'center',fontSize:20,fontWeight:'bold'}}>Age</Text>
-                            <Text style={{width:width/5,alignItems:'center',fontSize:20,fontWeight:'bold'}}>Height</Text>
-                            <Text style={{width:width/5,alignItems:'center',fontSize:20,fontWeight:'bold'}}>Weight</Text>
-                            <Text style={{width:width/3,alignItems:'center',fontSize:20,fontWeight:'bold'}}>School</Text>
-                            <Text style={{width:width/2,alignItems:'center',fontSize:20,fontWeight:'bold'}}>Birth Date</Text>                            
+                            <Text style={styles.title1}>Num.</Text>
+                            <Text style={styles.title1}>Pos.</Text>
+                            <Text style={styles.title1}>Age</Text>
+                            <Text style={styles.title1}>Hgt.</Text>
+                            <Text style={styles.title1}>Wgt.</Text>
+                            <Text style={{width:width/3,alignItems:'center',fontSize:20,fontWeight:'bold',color:'black'}}>Sch.</Text>
+                            <Text style={{width:width/2,alignItems:'center',fontSize:20,fontWeight:'bold',color:'black'}}>Bir.</Text>                            
                         </View>
 
                         {playerinfo[this.state.name].basic.resultSets[0].rowSet.map((element,index)=>{
                             return(
                                 <View style={{flexDirection:'row'}}>
                                     <View style={{flexDirection:'column',marginBottom:5}}>
-                                        <Text style={{width:width/5,alignItems:'center'}}>{element[4]}</Text>                                     
+                                        <Text style={styles.text2}>{element[4]}</Text>                                     
                                     </View>
                                     <View style={{flexDirection:'column'}}>
-                                        <Text style={{width:width/5,alignItems:'center'}}>{element[5]}</Text>                                     
+                                        <Text style={styles.text2}>{element[5]}</Text>                                     
                                     </View>    
                                     <View style={{flexDirection:'column'}}>
-                                        <Text style={{width:width/5,alignItems:'center'}}>{element[9]}</Text>                                     
+                                        <Text style={styles.text2}>{element[9]}</Text>                                     
                                     </View>    
                                     <View style={{flexDirection:'column'}}>
-                                        <Text style={{width:width/5,alignItems:'center'}}>{element[6]}</Text>                                     
+                                        <Text style={styles.text2}>{element[6]}</Text>                                     
                                     </View> 
                                     <View style={{flexDirection:'column'}}>
-                                        <Text style={{width:width/5,alignItems:'center'}}>{element[7]}</Text>                                     
+                                        <Text style={styles.text2}>{element[7]}</Text>                                     
                                     </View>       
                                     <View style={{flexDirection:'column'}}>
-                                        <Text style={{width:width/3,alignItems:'center'}}>{element[11]}</Text>                                     
+                                        <Text style={{width:width/3,alignItems:'center',color:'black'}}>{element[11]}</Text>                                     
                                     </View>             
                                     <View style={{flexDirection:'column'}}>
-                                        <Text style={{width:width/2,alignItems:'center'}}>{element[8]}</Text>                                     
+                                        <Text style={{width:width/2,alignItems:'center',color:'black'}}>{element[8]}</Text>                                     
                                     </View>       
                                 </View>
                         
@@ -81,3 +81,26 @@ export default class lineup extends Component{
         )
     }
 }
+
+const styles = StyleSheet.create({
+    text: {
+        color: 'black'
+    },
+    title:{
+        fontSize:20,
+        fontWeight:'bold',
+        color:'black'
+    },
+    title1:{
+        width:width/5,
+        alignItems:'center',
+        fontSize:20,
+        fontWeight:'bold',
+        color:'black'
+    },
+    text2:{
+        width:width/5,
+        alignItems:'center',
+        color:'black'
+    }
+})
