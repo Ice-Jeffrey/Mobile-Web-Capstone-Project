@@ -10,7 +10,8 @@ const stacknavigation = createStackNavigator({
             headerTitle: 'Sports News',
             headerStyle: {
                 backgroundColor: '#0099FF'
-            }
+            },
+            headerTintColor: 'white'
         }
     },
     Detail:{
