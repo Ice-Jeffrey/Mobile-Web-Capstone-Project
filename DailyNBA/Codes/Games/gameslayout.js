@@ -26,9 +26,9 @@ export class GamesLayout extends Component {
           />
           <Text>VISITOR</Text>    
         </View>
-        <View style={styles.score}><Text>{this.props.visitor}</Text></View>
+        <View style={styles.score}><Text style={styles.text}>{this.props.visitor}</Text></View>
         <View style={styles.score}><Text>{this.props.visitorscore} - {this.props.homescore}</Text></View>
-        <View style={styles.score}><Text>{this.props.home}</Text></View>
+        <View style={styles.score}><Text style={styles.text}>{this.props.home}</Text></View>
         <View style={styles.team}>
           <Image
             style={styles.teamImage}
@@ -36,7 +36,7 @@ export class GamesLayout extends Component {
           />
           <Text>HOME</Text>    
         </View>
-        <View style={{width: Width/12, alignItems: 'center', justifyContent: 'center'}}><Text>{this.props.status}</Text></View>
+        <View style={{width: Width/12, alignItems: 'center', justifyContent: 'center', marginRight: 3}}><Text>{this.props.status}</Text></View>
       </View>   
     )
   }
@@ -71,5 +71,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: Width - 2*60 - Width/12
+  },
+  text: {
+    fontSize: 18
   }
 });

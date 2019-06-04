@@ -37,7 +37,7 @@ export class Leaders extends Component {
     render() {
         return(
             <View>
-                <Text style={{fontSize: 25}}>{'\n'}Leaders</Text>
+                <Text style={{fontSize: 25, marginLeft: Width/25}}>{'\n'}Leaders</Text>
                 <View style={styles.container}>
                     
                     <View style={styles.row}>

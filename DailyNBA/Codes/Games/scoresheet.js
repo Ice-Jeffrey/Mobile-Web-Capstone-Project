@@ -38,7 +38,7 @@ export class Scoresheet extends Component {
     render() {
         return( 
             <View style={[{height: Height/8 + Height/6}]}>
-            <ScrollView>
+            
                 {<GamesLayout
                     visitor={this.state.general.visitor.team_key}
                     visitorscore={this.state.general.visitor.score}
@@ -47,7 +47,15 @@ export class Scoresheet extends Component {
                     status={this.props.status}
                 />}
                 
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start'}}>
+                <View style={{ 
+                    flex: 1, 
+                    alignItems: 'center', 
+                    justifyContent: 'flex-start', 
+                    borderWidth: StyleSheet.hairlineWidth,
+                    borderColor: '#f5f5f5',
+                    marginLeft: 1,
+                    marginRight: 1,
+                }}>
                     <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#F5FCFF'}}>
                         <View style={[styles.scorecell, {width: 50}]}><Text>Team</Text></View>
                         {this.state.visitorperiod.map( (item) => {
@@ -81,7 +89,7 @@ export class Scoresheet extends Component {
                         <View style={[styles.scorecell, {width: 50}]}><Text>{this.state.home.score}</Text></View>
                     </View>
                 </View>
-            </ScrollView>
+            
             </View>
         );
     }
@@ -113,7 +121,7 @@ const styles = StyleSheet.create({
     },
     scorecell: {
       height: Height/18,
-      borderWidth: 1,
+      borderWidth: StyleSheet.hairlineWidth,
       borderColor: 'black',
       alignItems: 'center',
       justifyContent: 'center'

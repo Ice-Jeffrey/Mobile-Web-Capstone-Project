@@ -11,14 +11,14 @@ const width = Dimensions.get('window').width;
 export default class TeamDeatails extends Component {
   static navigationOptions = ({navigation}) => ({
     headerStyle:{backgroundColor:teams[navigation.state.params.name].color},
-    headerTitle: 
+    headerTitle: (
     <View 
       style={[styles.container]} 
     >
       <Image source={teams[navigation.state.params.name].logo} style={{width:40,height:40}}/>
-      <View style={{alignItems: 'center' ,justifyContent: 'center'}}><Text style={styles.font}>{teams[navigation.state.params.name].team}</Text></View>
-    </View>      
-
+      <View style={{alignItems: 'center' ,justifyContent: 'center', marginLeft: 5}}><Text style={styles.font}>{teams[navigation.state.params.name].team}</Text></View>
+    </View>  ),    
+    headerTintColor: 'white'
   })
   constructor(props){
     super(props)

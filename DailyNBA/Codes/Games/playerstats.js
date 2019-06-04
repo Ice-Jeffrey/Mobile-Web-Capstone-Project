@@ -38,7 +38,7 @@ export class Playerstats extends Component {
     render() {
         return(
             <View>
-                <Text style={styles.title}>{'\n'}Visitor Playerstats</Text>
+                <Text style={[styles.title, {marginLeft: Width/25}]}>{'\n'}Visitor Playerstats</Text>
                 <View style={styles.row}>
                     <View style={{width: Width/5}}>
                         <View style={styles.name}><Text>Name</Text></View>
@@ -101,7 +101,7 @@ export class Playerstats extends Component {
                     </View>       
                 </View>
 
-                <Text style={styles.title}>{'\n'}Home Playerstats</Text>
+                <Text style={[styles.title, {marginLeft: Width/25}]}>{'\n'}Home Playerstats</Text>
                 <View style={styles.row}>
                     <View style={{width: Width/5}}>
                         <View style={styles.name}><Text>Name</Text></View>

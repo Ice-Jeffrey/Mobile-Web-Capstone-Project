@@ -37,63 +37,65 @@ export class Teamstats extends Component {
 
     render() {
         return(
-            <View style={styles.container}>
-                <Text style={{fontSize: 25}}>{'\n'}Team Stats</Text>
-                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
-                    <View style={{alignItems: 'center', width: Width/3}}><Text style={{fontSize: 20}}>VISITOR</Text></View>
-                    <View style={{alignItems: 'center', width: Width/3}} />
-                    <View style={{alignItems: 'center', width: Width/3}}><Text style={{fontSize: 20}}>HOME</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.points}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Points</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.points}</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.field_goals_made}/{this.state.visitor.field_goals_attempted}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Field Goals</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.field_goals_made}/{this.state.home.field_goals_attempted}</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.three_pointers_made}/{this.state.visitor.three_pointers_attempted}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Three Pointers</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.three_pointers_made}/{this.state.home.three_pointers_attempted}</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.free_throws_made}/{this.state.visitor.free_throws_attempted}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Free Throws</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.free_throws_made}/{this.state.home.free_throws_attempted}</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.rebounds_offensive}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Off-Rebounds</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.rebounds_offensive}</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.rebounds_defensive}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Def-Rebounds</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.rebounds_defensive}</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.assists}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Assists</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.assists}</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.steals}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Steals</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.steals}</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.blocks}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Blocks</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.blocks}</Text></View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.turnovers}</Text></View>
-                    <View style={styles.type}><Text style={{fontSize: 20}}>Turnovers</Text></View>
-                    <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.turnovers}</Text></View>
-                </View>
+            <View>
+                <View style={{backgroundColor: 'white', marginLeft: Width/25}}><Text style={{fontSize: 25}}>{'\n'}Team Stats</Text></View>
+                <View style={styles.container}>
+                    <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
+                        <View style={{alignItems: 'center', width: Width/3}}><Text style={{fontSize: 20}}>VISITOR</Text></View>
+                        <View style={{alignItems: 'center', width: Width/3}} />
+                        <View style={{alignItems: 'center', width: Width/3}}><Text style={{fontSize: 20}}>HOME</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.points}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Points</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.points}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.field_goals_made}/{this.state.visitor.field_goals_attempted}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Field Goals</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.field_goals_made}/{this.state.home.field_goals_attempted}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.three_pointers_made}/{this.state.visitor.three_pointers_attempted}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Three Pointers</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.three_pointers_made}/{this.state.home.three_pointers_attempted}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.free_throws_made}/{this.state.visitor.free_throws_attempted}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Free Throws</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.free_throws_made}/{this.state.home.free_throws_attempted}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.rebounds_offensive}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Off-Rebounds</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.rebounds_offensive}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.rebounds_defensive}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Def-Rebounds</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.rebounds_defensive}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.assists}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Assists</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.assists}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.steals}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Steals</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.steals}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.blocks}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Blocks</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.blocks}</Text></View>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.visitor.turnovers}</Text></View>
+                        <View style={styles.type}><Text style={{fontSize: 20}}>Turnovers</Text></View>
+                        <View style={styles.stats}><Text style={{fontSize: 15}}>{this.state.home.turnovers}</Text></View>
+                    </View>
+                </View> 
             </View>
         )
     }

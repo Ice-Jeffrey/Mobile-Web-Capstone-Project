@@ -4,6 +4,7 @@ import {Scoresheet} from './scoresheet'
 import {Leaders} from './leaders'
 import {Teamstats} from './teamstats'
 import {Playerstats} from './playerstats'
+import Teams from '../../assets/team-map'
 
 const Height = Dimensions.get('screen').height * 17/24;
 
@@ -24,6 +25,10 @@ class GameDetails extends Component {
     let title = visitor + ' - ' + home;
     return {
       title: title,
+      headerStyle: {
+        backgroundColor: Teams[home.toLowerCase()].color
+      },
+      headerTintColor: 'white'
     };
   };
 
