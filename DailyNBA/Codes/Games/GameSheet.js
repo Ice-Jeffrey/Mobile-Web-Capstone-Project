@@ -37,13 +37,15 @@ class GameSheet extends Component {
             status: item.period_time.period_status,
           })}
         >
-          <GamesLayout
-            visitor={item.visitor.team_key}
-            visitorscore={item.visitor.score}
-            home={item.home.team_key}
-            homescore={item.home.score}
-            status={item.period_time.period_status}
-          />
+          <View style={{borderWidth: StyleSheet.hairlineWidth}}>
+            <GamesLayout
+              visitor={item.visitor.team_key}
+              visitorscore={item.visitor.score}
+              home={item.home.team_key}
+              homescore={item.home.score}
+              status={item.period_time.period_status}
+            />
+          </View>
         </TouchableOpacity>
       </View>
     )

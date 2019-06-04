@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import {View, Dimensions, StyleSheet, TextInput,Button, TouchableOpacity} from "react-native";
+import {Icon} from 'react-native-elements'
+
 class Header extends Component {
     constructor(props){
         super(props)
@@ -41,8 +43,11 @@ class Header extends Component {
                     />
                 </View>
                 <View style={{marginRight: 10}}>
-                    <Button onPress={this._onPress}
-                        title="touch" />
+                    <Icon 
+                        onPress={this._onPress}
+                        name='search'
+                        type='material' 
+                    />
                 </View>
             </View>                     
         )

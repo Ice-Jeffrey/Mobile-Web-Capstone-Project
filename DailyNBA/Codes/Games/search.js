@@ -26,7 +26,7 @@ export class SearchSheet extends Component {
                     onPress={() => this.props.navigation.navigate('SearchResult', {date: this.state.date})}
                     style={{marginRight: 10}}
                 >
-                    <Icon name='search' type='material' color='black'/>
+                    <Icon name='search' type='material' color='white'/>
                 </TouchableOpacity>
             </View>
         );
