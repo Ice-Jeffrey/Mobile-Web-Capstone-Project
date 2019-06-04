@@ -8,6 +8,7 @@ useScreens();
 import GamesContainer from './Containers/Games'
 import RankingsContainer from './Containers/Rankings'
 import WebContainer from './Containers/Web'
+import PlayersContainer from './Containers/Players'
 
 class MeScreen extends Component {
   render() {
@@ -58,7 +59,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
       }
     },
     Me: {
-      screen: MeScreen,
+      screen: PlayersContainer,
       activeColor: 'red',
       inactiveColor: 'gray',
       navigationOptions: {
