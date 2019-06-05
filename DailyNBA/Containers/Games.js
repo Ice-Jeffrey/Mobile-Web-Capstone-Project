@@ -92,9 +92,6 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
       inactiveTintColor: 'gray',//label和icon的前景色 活跃状态下（未选中）
       style: {
           backgroundColor: '#F5FCFF',
-          height: Dimensions.get('screen').height/20,
-          alignItems: 'center',
-          justifyContent: 'center'
       },
       indicatorStyle: {
           height: 2,

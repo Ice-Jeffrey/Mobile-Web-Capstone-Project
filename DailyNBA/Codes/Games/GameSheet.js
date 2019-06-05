@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, StyleSheet, TouchableOpacity, FlatList} from 'react-native'
+import {View, StyleSheet, TouchableOpacity, FlatList, Text} from 'react-native'
 import {GamesLayout} from './gameslayout'
 
 class GameSheet extends Component {
@@ -23,8 +23,8 @@ class GameSheet extends Component {
     y = dt.getFullYear();
     m = dt.getMonth()+1;
     d = dt.getDate();
-    m = m>9?m:"0"+m;
-    d = d>9?d:"0"+d;
+    m = m>9 ? m : "0"+m;
+    d = d>9 ? d : "0"+d;
     this.setState({date: y+''+m+''+d});
     fetch(`http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${y+''+m+''+d}/games.json`)
       .then( response => response.json() )
@@ -64,13 +64,20 @@ class GameSheet extends Component {
 
   render()
   {
-    return(
-      <FlatList
+    return (
+      this.state.games.length === 0 ? 
+      (<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text style={{fontSize: 20}}>
+          No games on the current date.
+        </Text>
+      </View>)
+      :
+      (<FlatList
         data={this.state.games}
         extraData={this.state}
         keyExtractor={item => item.id}
         renderItem={this._renderItem}
-      />
+      />)     
     )
   }
 }
