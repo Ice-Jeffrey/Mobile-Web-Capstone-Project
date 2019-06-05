@@ -82,7 +82,9 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
     },
     tabBarOptions: {
       tabStyle: {
-        width: Dimensions.get('screen').width/2
+        width: Dimensions.get('screen').width/2,
+        alignItems: 'center',
+        justifyContent: 'center'
       },
       upperCaseLabel:false,
       scrollEnabled: true,//是否支持 选项卡滚动，默认false
