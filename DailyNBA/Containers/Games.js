@@ -10,8 +10,8 @@ const Width = Dimensions.get('screen').width;
 
 var date = new Date(); //获取当前日期时间戳
 
-var before = date - 1000*60*60*24;//当前日期时间戳减去一天时间戳
-var beforebefore = date - 1000*60*60*24*2;
+var before = date;//当前日期时间戳减去一天时间戳
+var beforebefore = date - 1000*60*60*24;
 
 var today = new Date(before);//将时间戳转化为Date对象
 var yesterday = new Date(beforebefore);

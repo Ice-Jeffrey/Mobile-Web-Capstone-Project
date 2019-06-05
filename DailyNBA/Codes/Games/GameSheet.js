@@ -6,7 +6,7 @@ class GameSheet extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: 20181225,
+      date: '',
       games: [
 
       ]
@@ -15,7 +15,18 @@ class GameSheet extends Component {
 
   //get the data from the internet
   componentDidMount() {
-    fetch(`http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${this.props.date}/games.json`)
+    let s = this.props.date;
+    var y = parseInt(s.substr(0,4), 10);
+    var m = parseInt(s.substr(4,2), 10)-1;
+    var d = parseInt(s.substr(6,2), 10);
+    var dt = new Date(y, m, d-1);
+    y = dt.getFullYear();
+    m = dt.getMonth()+1;
+    d = dt.getDate();
+    m = m>9?m:"0"+m;
+    d = d>9?d:"0"+d;
+    this.setState({date: y+''+m+''+d});
+    fetch(`http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${y+''+m+''+d}/games.json`)
       .then( response => response.json() )
       .then(data => {
         this.setState({games: data.sports_content.games.game});
