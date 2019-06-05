@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {View, Dimensions, StyleSheet, TextInput,Button, TouchableOpacity} from "react-native";
 import {Icon} from 'react-native-elements'
+import Playerinfo from '../../assets/players/PlayersDetasdatas'
 
 class Header extends Component {
     constructor(props){
@@ -12,13 +13,13 @@ class Header extends Component {
     }
 
     _onPress = () => {
-        if(this.state.data===''){
-            alert('Wrong player name')
-        }
-        else {
+        if(this.state.data in Playerinfo){
             this.props.navigation.navigate('Details', {
                 Person_Id: this.state.data
          })
+        }
+        else {
+            alert('Wrong names!')
         }            
     }
     
@@ -35,7 +36,7 @@ class Header extends Component {
                 <View>
                     <TextInput
                         onChangeText={(text)=>{this.change(text)}}
-                        onSubmitEditing={() => this._onPress}
+                        onSubmitEditing={this._onPress}
                         placeholder="Which player you want to know?"
                         blurOnSubmit={false}
                         returnKeyType="done"
