@@ -10,20 +10,39 @@ export class SearchSheet extends Component {
         }
     }
 
+    _onSubmitEditing = (strDate) => {
+        let flag = true;
+        if (strDate.length != 8) 
+            flag = false;
+        var dtDate = null ;
+        var nYear = parseInt( strDate.substring( 0, 4 ), 10 ) ;
+        var nMonth = parseInt( strDate.substring( 4, 6 ), 10 ) ;
+        var nDay = parseInt( strDate.substring( 6, 8 ), 10 ) ;
+        if( isNaN( nYear ) == true || isNaN( nMonth ) == true || isNaN( nDay ) == true )
+            flag = false;
+        dtDate = new Date( nYear, nMonth - 1, nDay ) ;
+        if( nYear != dtDate.getFullYear() || ( nMonth - 1 ) != dtDate.getMonth() || nDay != dtDate.getDate() )
+            flag = false;
+        if(flag)
+            this.props.navigation.navigate('SearchResult', {date: strDate})
+        else    
+            alert('Wrong date!');
+    }
+
     render() {
         return (
             <View style={styles.header}>
                 <TextInput
                     maxLength={ 8 }
                     onChangeText = {(text) => this.setState({date: text})}
-                    onSubmitEditing = {() => this.props.navigation.navigate('SearchResult', {date: this.state.date})}
+                    onSubmitEditing = {() => this._onSubmitEditing(this.state.date) }
                     placeholder = "please input a date like 20190101"
                     blurOnSubmit = {false}
                     returnKeyType = "search"
                     style={styles.input}
                 />
                 <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('SearchResult', {date: this.state.date})}
+                    onPress={() => this._onSubmitEditing(this.state.date)}
                     style={{marginRight: 10}}
                 >
                     <Icon name='search' type='material' color='white'/>
