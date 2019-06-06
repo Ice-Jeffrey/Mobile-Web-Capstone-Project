@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         borderBottomWidth:StyleSheet.hairlineWidth,
     }
-})
+}
