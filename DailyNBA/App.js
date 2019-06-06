@@ -10,16 +10,6 @@ import RankingsContainer from './Containers/Rankings'
 import WebContainer from './Containers/Web'
 import PlayersContainer from './Containers/Players'
 
-class MeScreen extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Me</Text>
-      </View>
-    );
-  }
-}
-
 const TabNavigator = createMaterialBottomTabNavigator(
   {
     Games: {

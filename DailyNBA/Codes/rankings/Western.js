@@ -24,10 +24,10 @@ componentDidMount(){
       return(
         <View style={{marginBottom:20,marginTop:5}}>
             <View style={{flexDirection:'row'}}>
-                <Text style={{width:width/4+70,justifyContent:'center',fontWeight:'bold'}}>        Team</Text>
-                <Text style={{width:width/5,justifyContent:'center',fontWeight:'bold'}}>Wins</Text>
-                <Text style={{width:width/5,justifyContent:'center',fontWeight:'bold'}}>Losses</Text>
-                <Text style={{width:width/5,justifyContent:'center',fontWeight:'bold'}}>Percentage</Text>
+                <Text style={{width:width/4+60,justifyContent:'center',fontWeight:'bold',color:'black'}}>        Team</Text>
+                <Text style={styles.text}>Wins</Text>
+                <Text style={styles.text}>Losses</Text>
+                <Text style={styles.text}>Percentage</Text>
             </View>
             <FlatList  
                 data = {this.state.datas}
@@ -73,12 +73,12 @@ componentDidMount(){
                 onPress={()=>this.props.navigation.navigate('Details',{name:item.abbreviation.toLowerCase()})}
             >
                 <View style={styles.list}>
-                    <Text style={{color:'#860038',width:23,fontWeight:'bold'}}>{west.indexOf(item.index)+1}.</Text>
+                    <Text style={styles.textnum}>{west.indexOf(item.index)+1}.</Text>
                     <Image source={teams[item.abbreviation.toLowerCase()].logo} style={{width:50,height:50}}/>
-                    <Text style={{width:width/4,justifyContent:'center'}}>  {item.nickname}</Text>
-                    <Text style={{width:width/5,justifyContent:'center'}}>{item.team_stats.wins}</Text>
-                    <Text style={{width:width/5,justifyContent:'center'}}>{item.team_stats.losses}</Text>
-                    <Text style={{width:width/5,justifyContent:'center'}}>{item.team_stats.pct}%</Text>
+                    <Text style={{width:width/4,justifyContent:'center',color:'black'}}>  {item.nickname}</Text>
+                    <Text style={styles.textdata}>{item.team_stats.wins}</Text>
+                    <Text style={styles.textdata}>{item.team_stats.losses}</Text>
+                    <Text style={styles.textdata}>{item.team_stats.pct}%</Text>
                 </View>                
             </TouchableOpacity>
             :null}
@@ -92,7 +92,23 @@ componentDidMount(){
         width:width,
         height:55,
         alignItems:'center'
-        
+    },
+    text:{
+        width:width/5,
+        justifyContent:'center',
+        fontWeight:'bold',
+        color:'black'
+    },
+    textnum:{
+        color:'#860038',
+        width:23,
+        fontWeight:'bold',
+        marginLeft:2,
+    },
+    textdata:{
+        width:width/5,
+        justifyContent:'center',
+        color:'black'
     }
 })
 

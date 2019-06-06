@@ -33,15 +33,6 @@ const topNavigator = createMaterialTopTabNavigator({
 
 
 const Ap = createAppContainer(topNavigator);
-export default class Team extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            name: this.props.name
-        }
-    }
-
-    render() {
-        return <Ap screenProps={{name: this.state.name}}/>
-    }
+export default Team = ({props}) => {
+    return <Ap screenProps={{name: props.name}}/>
 } 

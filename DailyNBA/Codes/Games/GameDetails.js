@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, ScrollView, Dimensions} from 'react-native'
+import {View, ScrollView, Dimensions, Text} from 'react-native'
 import {Scoresheet} from './scoresheet'
 import {Leaders} from './leaders'
 import {Teamstats} from './teamstats'
@@ -34,7 +34,14 @@ class GameDetails extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      this.state.general.visitor.score === '' ? 
+      (<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text style={{fontSize: 20, color: 'black'}}>
+          The game hasn't started yet!
+        </Text>
+      </View>)
+      : 
+      (<View style={{flex: 1}}>
         <View>
           <Scoresheet 
             id={this.state.id} 
@@ -63,7 +70,7 @@ class GameDetails extends Component {
             />
           </View>
         </ScrollView>
-      </View>
+      </View>)
     );
   }  
 }

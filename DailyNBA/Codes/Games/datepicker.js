@@ -40,6 +40,7 @@ export class DatePicker extends Component {
                 <Icon
                     name='calendar'
                     type='antdesign' 
+                    color='white'
                 />
             </TouchableOpacity>
         )

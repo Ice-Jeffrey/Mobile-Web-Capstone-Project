@@ -10,8 +10,8 @@ const Width = Dimensions.get('screen').width;
 
 var date = new Date(); //获取当前日期时间戳
 
-var before = date - 1000*60*60*24;//当前日期时间戳减去一天时间戳
-var beforebefore = date - 1000*60*60*24*2;
+var before = date;//当前日期时间戳减去一天时间戳
+var beforebefore = date - 1000*60*60*24;
 
 var today = new Date(before);//将时间戳转化为Date对象
 var yesterday = new Date(beforebefore);
@@ -82,7 +82,9 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
     },
     tabBarOptions: {
       tabStyle: {
-        width: Dimensions.get('screen').width/2
+        width: Dimensions.get('screen').width/2,
+        alignItems: 'center',
+        justifyContent: 'center'
       },
       upperCaseLabel:false,
       scrollEnabled: true,//是否支持 选项卡滚动，默认false
@@ -90,9 +92,6 @@ const TopTabNavigator = createMaterialTopTabNavigator({//在这里配置页面�
       inactiveTintColor: 'gray',//label和icon的前景色 活跃状态下（未选中）
       style: {
           backgroundColor: '#F5FCFF',
-          height: Dimensions.get('screen').height/20,
-          alignItems: 'center',
-          justifyContent: 'center'
       },
       indicatorStyle: {
           height: 2,

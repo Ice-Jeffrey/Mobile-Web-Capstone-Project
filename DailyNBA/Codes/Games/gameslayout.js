@@ -7,39 +7,29 @@ import teams from '../../assets/team-map'
 const Height = Dimensions.get('screen').height;
 const Width = Dimensions.get('screen').width;
 
-export class GamesLayout extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visitor: this.props.visitor,
-      home: this.props.home
-    }
-  }
-
-  render()  {
+export const GamesLayout = ({props}) => {
     return ( 
       <View style={styles.box}>
         <View style={styles.team}>
           <Image
             style={styles.teamImage}
-            source={teams[this.props.visitor.toLowerCase()].logo} 
+            source={teams[props.visitor.toLowerCase()].logo} 
           />
           <Text>VISITOR</Text>    
         </View>
-        <View style={styles.score}><Text style={styles.text}>{this.props.visitor}</Text></View>
-        <View style={styles.score}><Text>{this.props.visitorscore} - {this.props.homescore}</Text></View>
-        <View style={styles.score}><Text style={styles.text}>{this.props.home}</Text></View>
+        <View style={styles.score}><Text style={styles.text}>{props.visitor}</Text></View>
+        <View style={styles.score}><Text>{props.visitorscore} - {props.homescore}</Text></View>
+        <View style={styles.score}><Text style={styles.text}>{props.home}</Text></View>
         <View style={styles.team}>
           <Image
             style={styles.teamImage}
-            source={teams[this.props.home.toLowerCase()].logo}
+            source={teams[props.home.toLowerCase()].logo}
           />
           <Text>HOME</Text>    
         </View>
-        <View style={{width: Width/12, alignItems: 'center', justifyContent: 'center', marginRight: 3}}><Text>{this.props.status}</Text></View>
+        <View style={{width: Width/12, alignItems: 'center', justifyContent: 'center', marginRight: 3}}><Text>{props.status}</Text></View>
       </View>   
     )
-  }
 }
 
 const styles = StyleSheet.create({
