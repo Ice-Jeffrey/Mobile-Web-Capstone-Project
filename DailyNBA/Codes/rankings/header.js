@@ -17,6 +17,7 @@ class Header extends Component {
         }
         else{
             this.props.navigation.navigate('Details',{name:this.state.data})
+            this.setState({data: ''});
         }            
     }
     
